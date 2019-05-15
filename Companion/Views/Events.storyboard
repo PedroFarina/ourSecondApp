@@ -14,7 +14,7 @@
         <scene sceneID="US4-DZ-omn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Zl-sT-2H6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Eventos" id="bEo-Gw-Z5Q"/>
+                    <tabBarItem key="tabBarItem" title="Eventos" image="eventIcon2" selectedImage="eventIcon" id="bEo-Gw-Z5Q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="igM-bI-CPo">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -67,6 +67,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="btnAdd" destination="aar-aB-Bw2" id="Ns8-gk-d2F"/>
                         <outlet property="segmentedControl" destination="N5b-WZ-7Jb" id="2mW-ql-k4O"/>
@@ -84,13 +85,85 @@
                     <view key="view" contentMode="scaleToFill" id="JLg-hp-Aeu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventCard" translatesAutoresizingMaskIntoConstraints="NO" id="QGw-R5-b9e">
+                                <rect key="frame" x="124" y="103" width="166" height="165.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QGw-R5-b9e" secondAttribute="height" multiplier="1:1" id="tNI-4E-AvK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uc-dJ-JAw">
+                                <rect key="frame" x="0.0" y="303.5" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereco" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXf-Y6-8QS">
+                                <rect key="frame" x="0.0" y="331" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoP-fr-GkD">
+                                <rect key="frame" x="0.0" y="376.5" width="414" height="394"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PoP-fr-GkD" secondAttribute="height" multiplier="1.05:1" id="II9-5h-wJd"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="hFq-8X-ugy" kind="embed" identifier="" id="kze-p9-Z1e"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWR-5E-zDV">
+                                <rect key="frame" x="184" y="770.5" width="46" height="30"/>
+                                <state key="normal" title="Avaliar"/>
+                                <connections>
+                                    <segue destination="C65-yc-7AM" kind="presentation" identifier="rating" id="XaK-42-1A0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7uc-dJ-JAw" firstAttribute="top" secondItem="QGw-R5-b9e" secondAttribute="bottom" constant="35" id="DWu-sM-lJY"/>
+                            <constraint firstItem="7uc-dJ-JAw" firstAttribute="centerX" secondItem="QGw-R5-b9e" secondAttribute="centerX" id="Gbl-RW-H22"/>
+                            <constraint firstItem="PoP-fr-GkD" firstAttribute="centerX" secondItem="7uc-dJ-JAw" secondAttribute="centerX" id="NdW-7g-ybU"/>
+                            <constraint firstItem="QGw-R5-b9e" firstAttribute="centerX" secondItem="FP2-f3-PLd" secondAttribute="centerX" id="YYC-hx-1fv"/>
+                            <constraint firstItem="nXf-Y6-8QS" firstAttribute="firstBaseline" secondItem="7uc-dJ-JAw" secondAttribute="baseline" multiplier="1.01" constant="24" symbolType="layoutAnchor" id="bAk-M0-0xR"/>
+                            <constraint firstItem="HWR-5E-zDV" firstAttribute="top" secondItem="PoP-fr-GkD" secondAttribute="bottom" id="ejc-sK-isa"/>
+                            <constraint firstItem="7uc-dJ-JAw" firstAttribute="width" secondItem="JLg-hp-Aeu" secondAttribute="width" id="jLY-mv-2PE"/>
+                            <constraint firstItem="HWR-5E-zDV" firstAttribute="centerX" secondItem="FP2-f3-PLd" secondAttribute="centerX" id="lYp-Lg-iCf"/>
+                            <constraint firstItem="PoP-fr-GkD" firstAttribute="top" secondItem="nXf-Y6-8QS" secondAttribute="bottom" constant="25" id="o4D-2P-LqY"/>
+                            <constraint firstItem="PoP-fr-GkD" firstAttribute="width" secondItem="FP2-f3-PLd" secondAttribute="width" id="oBC-NM-fRZ"/>
+                            <constraint firstItem="QGw-R5-b9e" firstAttribute="top" secondItem="FP2-f3-PLd" secondAttribute="top" constant="15" id="v3X-9U-3D3"/>
+                            <constraint firstItem="QGw-R5-b9e" firstAttribute="width" secondItem="FP2-f3-PLd" secondAttribute="width" multiplier="0.4" id="w2W-aN-FLF"/>
+                            <constraint firstItem="nXf-Y6-8QS" firstAttribute="width" secondItem="JLg-hp-Aeu" secondAttribute="width" id="yul-w7-jai"/>
+                            <constraint firstItem="nXf-Y6-8QS" firstAttribute="centerX" secondItem="FP2-f3-PLd" secondAttribute="centerX" id="zmb-qf-SVf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FP2-f3-PLd"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VW2-Kt-swB">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="kq4-54-1Vt">
+                            <connections>
+                                <segue destination="zGl-W2-oQw" kind="presentation" identifier="editEvent" id="r9R-sR-Z4Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imgEvento" destination="QGw-R5-b9e" id="tQc-lW-CwZ"/>
+                        <outlet property="lblDate" destination="7uc-dJ-JAw" id="Zqa-Aa-71K"/>
+                        <outlet property="lblEndereco" destination="nXf-Y6-8QS" id="YkJ-8V-41g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUP-SC-YZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525" y="-1467"/>
+            <point key="canvasLocation" x="1524.6376811594205" y="-1467.1875"/>
+        </scene>
+        <!--Rating-->
+        <scene sceneID="hTL-Pg-9ME">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Rating" id="C65-yc-7AM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DdP-LP-RLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036" y="-1240"/>
         </scene>
         <!--Eventos Table View Controller-->
         <scene sceneID="X11-rp-EXE">
@@ -128,11 +201,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contactCard" translatesAutoresizingMaskIntoConstraints="NO" id="hse-rX-Yxk">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventCard" translatesAutoresizingMaskIntoConstraints="NO" id="hse-rX-Yxk">
                                 <rect key="frame" x="20" y="103" width="165.5" height="165.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hse-rX-Yxk" secondAttribute="height" multiplier="1:1" id="GsD-vL-ob5"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="XdX-L3-IEl" appends="YES" id="Ffx-JP-NnV"/>
+                                </connections>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ews-Yw-o9L">
                                 <rect key="frame" x="195.5" y="126" width="198.5" height="119.5"/>
@@ -185,6 +261,7 @@
                                 <date key="date" timeIntervalSinceReferenceDate="579555011.44357395">
                                     <!--2019-05-14 19:30:11 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="en_BR"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYQ-Z2-yRX">
                                 <rect key="frame" x="0.0" y="293.5" width="414" height="21"/>
@@ -245,11 +322,17 @@
                     <connections>
                         <outlet property="btnDone" destination="xBf-KE-3hM" id="gYo-W9-vga"/>
                         <outlet property="dtPicker" destination="PWQ-i8-NvU" id="ofS-sm-8XM"/>
+                        <outlet property="imgEvento" destination="hse-rX-Yxk" id="pzV-nJ-xCF"/>
                         <outlet property="txtEndereco" destination="kds-dB-cbM" id="Ftr-VY-k7Q"/>
                         <outlet property="txtName" destination="6uY-Zr-izK" id="I4f-VU-BBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPI-KZ-7dd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="XdX-L3-IEl">
+                    <connections>
+                        <action selector="imgEventoTap:" destination="bco-ft-rs0" id="Iqt-wa-4lr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3376.811594202899" y="-830.35714285714278"/>
         </scene>
@@ -262,7 +345,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="aCell" id="VWu-1h-KHf" customClass="ConnectionTableViewCell" customModule="Companion" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="aCell" id="VWu-1h-KHf" customClass="ConnectionTableViewCell" customModule="Companion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VWu-1h-KHf" id="q52-fh-hUb">
@@ -279,7 +362,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8N-u6-EJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3377" y="-243"/>
+            <point key="canvasLocation" x="3377" y="-1443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FKB-TZ-j0T">
@@ -301,6 +384,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="contactCard" width="256" height="256"/>
+        <image name="eventCard" width="250.5" height="184.5"/>
+        <image name="eventIcon" width="36.5" height="26.5"/>
+        <image name="eventIcon2" width="36.5" height="26.5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TgD-zz-5zE"/>
+        <segue reference="lHO-y6-Mco"/>
+    </inferredMetricsTieBreakers>
 </document>

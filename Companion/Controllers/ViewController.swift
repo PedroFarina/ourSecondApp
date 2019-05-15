@@ -9,20 +9,45 @@
 import UIKit
 import CoreData
 
+class ViewController :UIViewController{
+}
 
-class ViewController: UIViewController {
-
+class MainViewController: UIViewController, DataModifiedDelegate, UIScrollViewDelegate {
+    
+    
+    //Outlets
     @IBOutlet weak var status: UIView!
     @IBOutlet weak var historyGraph: LineGraphView!
     @IBOutlet weak var weekLabelStack: UIStackView!
+    @IBOutlet var swipeAction: UISwipeGestureRecognizer!
+    @IBOutlet weak var averageMood: UIImageView!
+    @IBOutlet weak var lblAverage: UILabel!
     
     
+    //Proivate Variables
+    private var ratings:[Rating] = []
+    private var isGraphViewShowing:Bool = false
+    private var averageMoodNumber:Int = 0
+    
+    
+    
+    
+    //Internal Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        ModelManager.shared().addDelegate(newDelegate: self)
+        DataModified()    }
+    
+    public func DataModified() {
+        getData()
+        setupGraphDisplay()
     }
     
-    var isGraphViewShowing = false
+    private func getData(){
+        ratings = ModelManager.shared().ratings
+    }
+    
+    
     
     @IBAction func GraphViewTap(_ gesture: UIGestureRecognizer?){
         if (isGraphViewShowing) {
@@ -30,59 +55,119 @@ class ViewController: UIViewController {
             UIView.transition(from: historyGraph,
                               to: status,
                               duration: 1.0,
-                              options: [.transitionCurlDown, .showHideTransitionViews],
+                              options: [.transitionFlipFromLeft, .showHideTransitionViews],
                               completion:nil)
+            swipeAction.direction = .left
         }else {
             //show Graph
             UIView.transition(from: status,
                               to: historyGraph,
                               duration: 1.0,
-                              options: [.transitionCurlUp, .showHideTransitionViews],
+                              options: [.transitionFlipFromRight, .showHideTransitionViews],
                               completion: nil)
+            swipeAction.direction = .right
         }
         isGraphViewShowing = !isGraphViewShowing
-        setupGraphDisplay()
     }
     
     func setupGraphDisplay() {
-        
-        let maxDayIndex = weekLabelStack.arrangedSubviews.count - 1
-        
-        //  1 - replace last day with today's actual data
-        historyGraph.graphPoints = fetchLastMoodValues()
-        //2 - indicate that the graph needs to be redrawn
-        historyGraph.setNeedsDisplay()
-        
-        //  3 - calculate average from graphPoints
-        let average = historyGraph.graphPoints.reduce(0, +) / historyGraph.graphPoints.count
-        
-        // 4 - setup date formatter and calendar
-        let today = Date()
-        let calendar = Calendar.current
-        
-        let formatter = DateFormatter()
-        formatter.setLocalizedDateFormatFromTemplate("EEEEE")
-        
-        // 5 - set up the day name labels with correct days
-        for i in 0...maxDayIndex {
-            if let date = calendar.date(byAdding: .day, value: -i, to: today),
-                let label = weekLabelStack.arrangedSubviews[maxDayIndex - i] as? UILabel {
-                label.text = formatter.string(from: date)
+        if ratings.count > 0{
+            averageMoodNumber = historyGraph.update(points: fetchLastMoodValues())
+            
+            averageMood.image = UIImage(named: GeneralProperties.ratingPathImages[averageMoodNumber - 1] + GeneralProperties.highlightedSufix)
+            var mood: String = "";
+            switch averageMoodNumber {
+            case 1:
+                mood = "terrível"
+            case 2:
+                mood = "triste"
+            case 3:
+                mood = "neutro"
+            case 4:
+                mood = "feliz"
+            case 5:
+                mood = "perfeito"
+            default:
+                mood = "bugado"
+            }
+            lblAverage.text = "Seu mood geral é \(mood)!"
+            
+            let maxIndex = weekLabelStack.arrangedSubviews.count - 1
+            
+            let formatter = DateFormatter()
+            formatter.setLocalizedDateFormatFromTemplate("MMMdd")
+            
+            
+            for i in 0...maxIndex {
+                if let label = weekLabelStack.arrangedSubviews[maxIndex - i] as? UILabel {
+                    if i < ratings.count{
+                        label.text = formatter.string(from: ratings[i].date! as Date)
+                    }
+                }
             }
         }
     }
     
     func fetchLastMoodValues() -> [Int]{
-        var lastMoods = historyGraph.graphPoints
-        
-        for i in 0...lastMoods.count-2{
-            lastMoods[i] = lastMoods[i+1]
+        var lastMoods:[Int] = []
+        for i in 0...ratings.count-1{
+            lastMoods.append(Int(ratings[i].value!.intValue))
         }
-        lastMoods[lastMoods.count - 1] =  Int.random(in: 0...5)// INSERT FETCH HERE
-        
-        
         return lastMoods
     }
 
+}
+
+public class RatingsController : UITableViewController, DataModifiedDelegate{
+    private var ratings:[Rating] = []
+    
+    private func getData(){
+        ratings = ModelManager.shared().ratings
+    }
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        ModelManager.shared().addDelegate(newDelegate: self)
+        getData()
+    }
+    
+    public func DataModified() {
+        getData()
+        tableView.reloadData()
+    }
+    
+    public override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ratings.count
+    }
+    
+    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "connectionCell1") as! ConnectionTableViewCell
+        
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("MMMdd")
+        var mood: String = "";
+        switch (ratings[indexPath.row].value) {
+        case 1:
+            mood = "terrível"
+        case 2:
+            mood = "triste"
+        case 3:
+            mood = "neutro"
+        case 4:
+            mood = "feliz"
+        case 5:
+            mood = "perfeito"
+        default:
+            mood = "bugado"
+        }
+        cell.textLabel?.text = mood + " " + formatter.string(from: ratings[indexPath.row].date! as Date)
+        return cell
+    }
 }
 

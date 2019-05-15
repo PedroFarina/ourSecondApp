@@ -9,12 +9,52 @@
 import Foundation
 import UIKit
 
-class EventosCreatorController : ViewController{
+class EventosCreatorController : ViewController, DataModifiedDelegate, UITextFieldDelegate{
+    @IBOutlet var imgEvento: UIImageView!
+    var imgChanged:Bool = false
     var eventoAtual:EventCard?
+    let imgPicker:ImagePickerManager = ImagePickerManager()
+    var tbViewController:PersonsTableViewController!
+    
+    func getData(){
+        tbViewController.persons = ModelManager.shared().connections
+        tbViewController.tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
+        if let eventoAtual = eventoAtual{
+            navigationItem.title = "Editar Evento"
+            navigationItem.rightBarButtonItem?.title = "Save"
+            txtName.text = eventoAtual.name
+            txtEndereco.text = eventoAtual.address
+            dtPicker.date = eventoAtual.date! as Date
+            btnDone.isEnabled = true
+            if let path = eventoAtual.photoPath{
+                let answer:String? = FileHelper.getFile(filePathWithoutExtension: path)
+                if let answer = answer{
+                    imgEvento.image = UIImage(contentsOfFile: answer)
+                }
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ModelManager.shared().addDelegate(newDelegate: self)
+        txtName.delegate = self
+        txtEndereco.delegate = self
+        imgEvento.layer.cornerRadius = 20
+    }
+    
+    func DataModified() {
+        getData()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tbViewController = segue.destination as? PersonsTableViewController{
             tbViewController.controller = self
+            self.tbViewController = tbViewController
         }
     }
     
@@ -25,16 +65,26 @@ class EventosCreatorController : ViewController{
     
     var tbViewSelectedValue:[PersonCard] = []
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
     @IBAction func btnCancelTap(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnSaveTap(_ sender: Any) {
+        var newPhoto:UIImage? = nil
+        if(imgChanged){
+            newPhoto = imgEvento.image
+        }
+        
         if eventoAtual != nil{
             //            evento.feed(name: "", photoPath: "", address: "", date: nil, persons: nil)
         }
         else{
-            let status:ModelStatus = ModelManager.shared().addEvent(name: txtName.text!, photoPath: "", address: txtEndereco.text, date: dtPicker.date as NSDate, persons:tbViewSelectedValue)
+            let status:ModelStatus = ModelManager.shared().addEvent(name: txtName.text!, photo: newPhoto, address: txtEndereco.text, date: dtPicker.date as NSDate, persons:tbViewSelectedValue)
             if(!status.successful){
                 fatalError(status.description)
             }
@@ -59,50 +109,15 @@ class EventosCreatorController : ViewController{
         }
         checkDone()
     }
+   
+    @IBAction func imgEventoTap(_ sender: UITapGestureRecognizer) {
+        imgPicker.pickImage(self) { (image) in
+            self.imgEvento.image = image
+            self.imgChanged = true
+        }
+    }
     
     private func checkDone(){
         btnDone.isEnabled = txtName.text != "" && tbViewSelectedValue.count > 0
     }
-}
-
-
-class PersonsTableViewController:UITableViewController{
-    public var selectedValue:[Int:PersonCard] = [:]
-    private var persons:[PersonCard] = ModelManager.shared().connections
-    public var controller:EventosCreatorController!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return persons.count
-    }
-    
-    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "aCell") as! ConnectionTableViewCell
-        cell.textLabel?.text = persons[indexPath.row].name
-        return cell
-    }
-    
-    override public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedValue[indexPath.row] = persons[indexPath.row]
-        controller.tableViewSelect(selected: selectedValue)
-    }
-    
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        selectedValue[indexPath.row] = nil
-        controller.tableViewSelect(selected: selectedValue)
-    }
-    
 }

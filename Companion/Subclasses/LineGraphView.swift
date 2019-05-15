@@ -8,17 +8,18 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class LineGraphView:UIView{
     @IBInspectable var cornerRadiusSize: CGFloat = 5.0
     @IBInspectable var startColor: UIColor = .red
     @IBInspectable var endColor: UIColor = .green
     @IBInspectable var LineColor: UIColor = .white
-    var margin:CGFloat = 20.0
-    var topBorder: CGFloat = 60
-    var bottomBorder: CGFloat = 100
+    public var margin:CGFloat = 20.0
+    public var topBorder: CGFloat = 60
+    public var bottomBorder: CGFloat = 100
     
-    public var graphPoints:[Int] = [0, 1, 6, 3, 2, 5, 4]
+    public var graphPoints:[Int] = [4,3,5]
+    
     
     override func draw(_ rect: CGRect) {
         
@@ -132,14 +133,22 @@ class LineGraphView:UIView{
     
         }
     
-    func setGraphPoints(_ points : [Int]){
+    private func setGraphPoints(_ points : [Int]){
         graphPoints = points
     }
     
-    func setMeasures(margin: CGFloat, topBorder: CGFloat, bottomBorder: CGFloat){
+    public func setMeasures(margin: CGFloat, topBorder: CGFloat, bottomBorder: CGFloat){
         self.margin = margin
         self.topBorder = topBorder
         self.bottomBorder = bottomBorder
     }
     
+    public func update(points: [Int]) -> Int{
+        self.setGraphPoints(points)
+        self.setNeedsDisplay()
+//        self.setMeasures()
+        return self.graphPoints.reduce(0, +) / self.graphPoints.count
+        
     }
+    
+}

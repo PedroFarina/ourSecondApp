@@ -9,16 +9,25 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 public class EventCard: Card {
-    func feed(name:String, photoPath:String, address:String?, date:NSDate, persons:[PersonCard]){
+    private let df = DateFormatter()
+    
+    func feed(name:String, photo:UIImage?, address:String?, date:NSDate, persons:[PersonCard]){
+        df.dateFormat = "dd-MM-yyyy hh:mm:ssZ"
+        
         self.name = name
-        self.photoPath = photoPath
+        if let photo = photo{
+            let photoPath = df.string(from: Date())
+            FileHelper.saveImage(image: photo, nameWithoutExtension: photoPath)
+            self.photoPath = photoPath
+        }
         self.address = address
         self.date = date
         for person in persons{
             self.addToPersons(person)
+            person.addToEvents(self)
         }
     }
 }

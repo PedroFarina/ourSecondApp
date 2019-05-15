@@ -16,7 +16,7 @@ public class PersonCard: Card {
     private let df = DateFormatter()
     
     func feed(name:String, photo:UIImage?, ratingInicial:Decimal){
-        df.dateFormat = "dd-mm-yyyy hh:mm:ssZ"
+        df.dateFormat = "dd-MM-yyyy hh:mm:ssZ"
         
         self.name = name
         
@@ -39,7 +39,7 @@ public class PersonCard: Card {
         }
         
         if let newPhoto = newPhoto{
-            df.dateFormat = "dd-mm-yyyy hh:mm:ssZ"
+            df.dateFormat = "dd-MM-yyyy hh:mm:ssZ"
             if let actualPhotoPath = photoPath{
                 FileHelper.deleteImage(filePathWithoutExtension: actualPhotoPath)
             }
@@ -60,6 +60,16 @@ public class PersonCard: Card {
         }
         
         return hasModifications
+    }
+    
+    func rating() -> Decimal{
+        var media:Decimal = 0
+        let ratings:[Rating] = self.ratings?.array as! [Rating]
+        for rating in ratings{
+            media += rating.value!.decimalValue
+        }
+        media /= Decimal(ratings.count)
+        return media
     }
     
     /*func modify(newName:String?, newPhoto:UIImage?, oldRating:Rating?, newRating:Rating?) -> Bool{

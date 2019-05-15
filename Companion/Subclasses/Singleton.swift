@@ -114,9 +114,9 @@ public class ModelManager{
         }
     }
     //Add
-    public func addEvent(name:String, photoPath:String, address:String?, date:NSDate, persons:[PersonCard]) -> ModelStatus{
+    public func addEvent(name:String, photo:UIImage?, address:String?, date:NSDate, persons:[PersonCard]) -> ModelStatus{
         let newEvent = NSEntityDescription.insertNewObject(forEntityName: "EventCard", into: context) as! EventCard
-        newEvent.feed(name: name, photoPath: photoPath, address: address, date: date, persons: persons)
+        newEvent.feed(name: name, photo: photo, address: address, date: date, persons: persons)
         _events.append(newEvent)
         do{
             try context.save()
@@ -147,9 +147,15 @@ public class ModelManager{
     // MARK: Ratings Accessors
     public var ratings:[Rating]{
         get{
-            var copy:[Rating] = []
+            do{
+                return try context.fetch(Rating.fetchRequest())
+            }
+            catch{
+                fatalError()
+            }
+            /*var copy:[Rating] = []
             copy.append(contentsOf: _ratings)
-            return copy
+            return copy*/
         }
     }
 }

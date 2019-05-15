@@ -30,10 +30,40 @@
             </objects>
             <point key="canvasLocation" x="4331" y="-1142"/>
         </scene>
+        <!--Ratings Controller-->
+        <scene sceneID="1nM-Yr-SSn">
+            <objects>
+                <tableViewController id="0vG-sQ-852" customClass="RatingsController" customModule="Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="USD-R5-u5O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="362.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectionCell1" id="6Ll-E6-r2Q" customClass="ConnectionTableViewCell" customModule="Companion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Ll-E6-r2Q" id="Cx3-lH-CVd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0vG-sQ-852" id="c3O-Gl-eC6"/>
+                            <outlet property="delegate" destination="0vG-sQ-852" id="zfP-xF-flF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGO-SZ-xp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6425" y="-498"/>
+        </scene>
         <!--Home-->
         <scene sceneID="1Zq-gR-zAW">
             <objects>
-                <viewController title="Home" id="pYw-Vi-mFe" customClass="ViewController" customModule="Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="pYw-Vi-mFe" customClass="MainViewController" customModule="Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mf7-Om-fYt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +84,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="kUw-Ri-2lw" firstAttribute="top" secondItem="sYc-4y-rVU" secondAttribute="bottom" id="AKw-MP-vbb"/>
                                             <constraint firstItem="sYc-4y-rVU" firstAttribute="centerX" secondItem="Aff-LR-qjV" secondAttribute="centerX" id="Jhw-FO-sM7"/>
@@ -67,51 +97,51 @@
                                             <constraint firstItem="kUw-Ri-2lw" firstAttribute="leading" secondItem="Aff-LR-qjV" secondAttribute="leading" id="v5o-oD-IqV"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdt-OV-njn" userLabel="LastMoodsGraph" customClass="LineGraphView" customModule="Companion" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdt-OV-njn" userLabel="LastMoodsGraph" customClass="LineGraphView" customModule="Companion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="362.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="g9T-oU-U5Q" userLabel="Week Label">
-                                                <rect key="frame" x="20" y="272" width="374" height="90.5"/>
+                                                <rect key="frame" x="20" y="267" width="374" height="45.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frE-MM-e4l" userLabel="Weekday1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="15.5" height="90.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="9" height="45.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCZ-MU-8jM" userLabel="Weekday2">
-                                                        <rect key="frame" x="60" y="0.0" width="15.5" height="90.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                                        <rect key="frame" x="61" y="0.0" width="9" height="45.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9w-gJ-B6L" userLabel="Weekday3">
-                                                        <rect key="frame" x="119.5" y="0.0" width="15.5" height="90.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                                        <rect key="frame" x="121.5" y="0.0" width="9" height="45.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59a-ui-lB2" userLabel="Weekday4">
-                                                        <rect key="frame" x="179.5" y="0.0" width="15.5" height="90.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                                        <rect key="frame" x="182.5" y="0.0" width="9" height="45.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5D-CU-N3H" userLabel="Weekday5">
-                                                        <rect key="frame" x="239" y="0.0" width="15.5" height="90.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="9" height="45.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDS-iF-kRB" userLabel="Weekday6">
-                                                        <rect key="frame" x="299" y="0.0" width="15.5" height="90.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                                        <rect key="frame" x="304" y="0.0" width="9" height="45.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eC-Ys-pkP" userLabel="Weekday7">
-                                                        <rect key="frame" x="358.5" y="0.0" width="15.5" height="90.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
+                                                        <rect key="frame" x="365" y="0.0" width="9" height="45.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -122,9 +152,9 @@
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="g9T-oU-U5Q" firstAttribute="width" secondItem="Fdt-OV-njn" secondAttribute="width" constant="-40" id="3EM-gS-yfT"/>
-                                            <constraint firstAttribute="bottom" secondItem="g9T-oU-U5Q" secondAttribute="bottom" id="AS7-vk-nDZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="g9T-oU-U5Q" secondAttribute="bottom" constant="50" id="AS7-vk-nDZ"/>
                                             <constraint firstItem="g9T-oU-U5Q" firstAttribute="centerX" secondItem="Fdt-OV-njn" secondAttribute="centerX" id="a4h-xo-aSS"/>
-                                            <constraint firstItem="g9T-oU-U5Q" firstAttribute="height" secondItem="Fdt-OV-njn" secondAttribute="height" multiplier="0.25" id="dde-nI-uDv"/>
+                                            <constraint firstItem="g9T-oU-U5Q" firstAttribute="height" secondItem="Fdt-OV-njn" secondAttribute="height" multiplier="0.25/2" id="dde-nI-uDv"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusSize">
@@ -163,13 +193,27 @@
                                     <constraint firstItem="Aff-LR-qjV" firstAttribute="width" secondItem="TCc-XQ-icT" secondAttribute="width" id="yep-sW-AwN"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="EOV-YK-VbM" appends="YES" id="0hG-7h-6V0"/>
+                                    <outletCollection property="gestureRecognizers" destination="i4r-Jl-lHQ" appends="YES" id="v9Y-6K-0sj"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJQ-oN-Cr5" userLabel="History">
                                 <rect key="frame" x="0.0" y="450.5" width="414" height="362.5"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdW-dD-mZS">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="362.5"/>
+                                        <connections>
+                                            <segue destination="0vG-sQ-852" kind="embed" id="1RR-m4-n5U"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="WdW-dD-mZS" firstAttribute="height" secondItem="OJQ-oN-Cr5" secondAttribute="height" id="ZL4-yo-1fm"/>
+                                    <constraint firstItem="WdW-dD-mZS" firstAttribute="centerX" secondItem="OJQ-oN-Cr5" secondAttribute="centerX" id="h6i-sq-Z5U"/>
+                                    <constraint firstItem="WdW-dD-mZS" firstAttribute="width" secondItem="OJQ-oN-Cr5" secondAttribute="width" id="uJ0-DM-8Uv"/>
+                                    <constraint firstItem="WdW-dD-mZS" firstAttribute="centerY" secondItem="OJQ-oN-Cr5" secondAttribute="centerY" id="ydm-BS-5Mc"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -187,22 +231,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B8i-Tq-fGJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="gPC-Bh-mKO">
-                        <barButtonItem key="rightBarButtonItem" title="Avaliar" id="2dr-CV-KIZ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Home" id="gPC-Bh-mKO"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="averageMood" destination="sYc-4y-rVU" id="Oex-AU-hn9"/>
                         <outlet property="historyGraph" destination="Fdt-OV-njn" id="UJ8-IZ-duP"/>
+                        <outlet property="lblAverage" destination="kUw-Ri-2lw" id="8bP-UW-sRc"/>
                         <outlet property="status" destination="Aff-LR-qjV" id="eGr-uL-T3P"/>
+                        <outlet property="swipeAction" destination="i4r-Jl-lHQ" id="cxs-O4-zK8"/>
                         <outlet property="weekLabelStack" destination="g9T-oU-U5Q" id="mzp-qs-Rvx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spr-oS-8S9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="EOV-YK-VbM">
+                <swipeGestureRecognizer direction="left" id="i4r-Jl-lHQ">
                     <connections>
-                        <action selector="GraphViewTap:" destination="pYw-Vi-mFe" id="Y0C-Xr-4MM"/>
+                        <action selector="GraphViewTap:" destination="pYw-Vi-mFe" id="9X1-UP-GIy"/>
                     </connections>
-                </tapGestureRecognizer>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5412" y="-498"/>
         </scene>
@@ -231,7 +276,7 @@
         <scene sceneID="rqJ-mk-Sr8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bQg-vl-KlO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="dWa-4E-BwQ"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="mainIcon2" selectedImage="mainIcon" id="dWa-4E-BwQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HuW-E8-Jmr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -248,6 +293,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mainIcon" width="27.5" height="26.5"/>
+        <image name="mainIcon2" width="27.5" height="26.5"/>
         <image name="teste" width="1080" height="720"/>
     </resources>
 </document>

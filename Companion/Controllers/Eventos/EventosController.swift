@@ -22,7 +22,7 @@ class EventosController:UIViewController, DataModifiedDelegate{
             tableViewController.controller = self
         }
         else if let viewerViewController = segue.destination as? EventosViewerController{
-            viewerViewController.eventAtual = sender as? EventCard
+            viewerViewController.eventoAtual = sender as? EventCard
         }
     }
     
