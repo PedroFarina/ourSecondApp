@@ -12,7 +12,7 @@ import CoreData
 
 
 public class EventCard: Card {
-    func feed(name:String, photoPath:String, address:String, date:NSDate, persons:[PersonCard]){
+    func feed(name:String, photoPath:String, address:String?, date:NSDate, persons:[PersonCard]){
         self.name = name
         self.photoPath = photoPath
         self.address = address

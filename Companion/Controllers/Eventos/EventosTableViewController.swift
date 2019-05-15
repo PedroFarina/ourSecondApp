@@ -1,33 +1,23 @@
 //
-//  criarEventoController.swift
+//  EventosTableViewController.swift
 //  Companion
 //
-//  Created by Pedro Giuliano Farina on 08/05/19.
+//  Created by Pedro Giuliano Farina on 14/05/19.
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
-public class EventoController : UITableViewController, DataModifiedDelegate{
-    
-    private var events:[EventCard] = ModelManager.shared().events
-    
-    private func getData(){
-        events = ModelManager.shared().events
-    }
+
+public class EventosTableViewController : UITableViewController{
+    var controller:EventosController!
+    public var events:[EventCard] = []
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        ModelManager.shared().addDelegate(newDelegate: self)
-        getData()
-    }
-    
-    public func DataModified() {
-        getData()
-        tableView.reloadData()
     }
     
     public override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,8 +30,9 @@ public class EventoController : UITableViewController, DataModifiedDelegate{
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "aCell") as! EventTableViewCell
-        //cell.lblTitle.text = events[indexPath.row].name
-        //cell.lblSubtitle.text = events[indexPath.row].date?.description
+        cell.textLabel!.text = events[indexPath.row].name
+        //cell.lblName.text = events[indexPath.row].name
+        //cell.lblDate.text = events[indexPath.row].date?.description
         //cell.imgCard.image = UIImage(named: "teste")
         return cell
     }
@@ -59,29 +50,8 @@ public class EventoController : UITableViewController, DataModifiedDelegate{
         }
     }
     
-}
-
-
-
-
-class EventosCreatorController : ViewController{
-    var eventoAtual:EventCard?
-    
-    @IBAction func btnCancelTap(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func btnSaveTap(_ sender: Any) {
-        if eventoAtual != nil{
-//            evento.feed(name: "", photoPath: "", address: "", date: nil, persons: nil)
-        }
-        else{
-            let status:ModelStatus = ModelManager.shared().addEvent(name: "", photoPath: "", address: "", date: NSDate(), persons: [])
-            if(!status.successful){
-                fatalError(status.description)
-            }
-        }
-        self.dismiss(animated: true, completion: nil)
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        controller.performSegue(withIdentifier: "selectEvent", sender: events[indexPath.row])
     }
     
 }

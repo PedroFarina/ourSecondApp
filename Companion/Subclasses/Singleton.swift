@@ -18,7 +18,6 @@ public class ModelManager{
             _events = try context.fetch(EventCard.fetchRequest())
             _connections = try context.fetch(PersonCard.fetchRequest())
             _ratings = try context.fetch(Rating.fetchRequest())
-            print("Teste")
         }
         catch{
             fatalError("Não foi possível recuperar os dados.")
@@ -115,7 +114,7 @@ public class ModelManager{
         }
     }
     //Add
-    public func addEvent(name:String, photoPath:String, address:String, date:NSDate, persons:[PersonCard]) -> ModelStatus{
+    public func addEvent(name:String, photoPath:String, address:String?, date:NSDate, persons:[PersonCard]) -> ModelStatus{
         let newEvent = NSEntityDescription.insertNewObject(forEntityName: "EventCard", into: context) as! EventCard
         newEvent.feed(name: name, photoPath: photoPath, address: address, date: date, persons: persons)
         _events.append(newEvent)
