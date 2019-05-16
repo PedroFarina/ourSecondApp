@@ -11,14 +11,12 @@ import UIKit
 
 class RatingController : UIViewController{
     @IBOutlet var imgCard:UIImageView!
-    @IBOutlet var lastImage: UIImageView!
     var evento:EventCard? = nil
     var pessoa:PersonCard? = nil
-    var rating:Int = 3
+    @IBOutlet var sliderRating: DesignableSlider!
     
     public override func viewDidLoad(){
         view.layer.cornerRadius = 20
-        lastImage.isHighlighted = true
         var card:Card
         if let evento = evento{
             card = evento
@@ -37,17 +35,21 @@ class RatingController : UIViewController{
         }
     }
     
-    @IBAction func gestureTap(sender:UITapGestureRecognizer){
-        if let image = sender.view as? UIImageView{
-            lastImage.isHighlighted = false
-            rating = image.tag
-            image.isHighlighted = true
-            lastImage = image
-        }
+    @IBAction func sliderChangedValue(_ sender: Any) {
+        sliderRating.thumbImage = UIImage(named: GeneralProperties.ratingPathImages[Int(sliderRating.value) - 1] + GeneralProperties.sliderSufix)
     }
     
     @IBAction func btnDoneTap(sender:Any?){
-        
+        let rating = Decimal(Int(sliderRating.value))
+        if let evento = evento{
+            ModelManager.shared().rateEvent(target: evento, rating: rating)
+        }
+        else if let pessoa = pessoa{
+            ModelManager.shared().rateConnection(target: pessoa, rating: rating)
+        }
+        else{
+            fatalError()
+        }
     }
     
     @IBAction func btnCancel(sender:Any?){

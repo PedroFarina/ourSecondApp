@@ -16,6 +16,7 @@
 		0243D7E6228BACFF0022D65E /* EventosCreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0243D7E5228BACFF0022D65E /* EventosCreatorController.swift */; };
 		0243D7E8228BC07D0022D65E /* EventosViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0243D7E7228BC07D0022D65E /* EventosViewerController.swift */; };
 		02884640228CB06D003C532A /* TableViewDatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288463F228CB06D003C532A /* TableViewDatePickerController.swift */; };
+		028AB22E228DF8BA007A52FA /* DesignableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AB22D228DF8BA007A52FA /* DesignableSlider.swift */; };
 		0297AC0522849E6200BA98B6 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297AC0422849E6200BA98B6 /* Singleton.swift */; };
 		029DA3642283634600150B55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029DA3632283634600150B55 /* AppDelegate.swift */; };
 		029DA36C2283634600150B55 /* Companion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 029DA36A2283634600150B55 /* Companion.xcdatamodeld */; };
@@ -56,6 +57,7 @@
 		0243D7E5228BACFF0022D65E /* EventosCreatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosCreatorController.swift; sourceTree = "<group>"; };
 		0243D7E7228BC07D0022D65E /* EventosViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosViewerController.swift; sourceTree = "<group>"; };
 		0288463F228CB06D003C532A /* TableViewDatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDatePickerController.swift; sourceTree = "<group>"; };
+		028AB22D228DF8BA007A52FA /* DesignableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSlider.swift; sourceTree = "<group>"; };
 		0297AC0422849E6200BA98B6 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		029DA3602283634600150B55 /* Memory Lane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memory Lane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029DA3632283634600150B55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				02B6777E22861BDE00512255 /* DataModifiedDelegate.swift */,
 				02020AD422874B080013E4D1 /* Properties.swift */,
 				02EA905F228A03A500F6A4D9 /* fileHelper.swift */,
+				028AB22D228DF8BA007A52FA /* DesignableSlider.swift */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				02DCB8CD228C8FEE00C354A7 /* ViewController.swift in Sources */,
 				029DA3842283691D00150B55 /* EventCard+CoreDataClass.swift in Sources */,
+				028AB22E228DF8BA007A52FA /* DesignableSlider.swift in Sources */,
 				029DA3872283691D00150B55 /* Rating+CoreDataProperties.swift in Sources */,
 				02884640228CB06D003C532A /* TableViewDatePickerController.swift in Sources */,
 				02020ACC228725B40013E4D1 /* ConnectionTableViewCell.swift in Sources */,

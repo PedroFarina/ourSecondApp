@@ -13,13 +13,13 @@
         <!--Conexões-->
         <scene sceneID="0V3-rx-2Js">
             <objects>
-                <tableViewController id="txa-6F-1Aw" customClass="ConexoesController" customModule="Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="txa-6F-1Aw" customClass="ConexoesController" customModule="Memory_Lane" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="92O-oJ-oKo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectionCell" id="e8b-z8-Fua" customClass="ConnectionTableViewCell" customModule="Companion" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectionCell" id="e8b-z8-Fua" customClass="ConnectionTableViewCell" customModule="Memory_Lane" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e8b-z8-Fua" id="8Vo-cs-klB">
@@ -52,7 +52,7 @@
         <!--conexaoCreator-->
         <scene sceneID="KGJ-eN-hH7">
             <objects>
-                <viewController title="conexaoCreator" id="tVO-iA-5Ms" customClass="ConexoesCreatorController" customModule="Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="conexaoCreator" id="tVO-iA-5Ms" customClass="ConexoesCreatorController" customModule="Memory_Lane" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BEE-qP-hhl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,6 +178,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Criar Conexão" id="IYn-8d-Qzg">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="VUS-zn-gqX">
+                            <color key="tintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="btnCancelTap:" destination="tVO-iA-5Ms" id="XhE-9g-h8M"/>
                             </connections>
@@ -260,7 +261,7 @@
         <!--Conexoes Viewer Controller-->
         <scene sceneID="FCk-HO-M7o">
             <objects>
-                <viewController id="ve2-Ha-Edw" customClass="ConexoesViewerController" customModule="Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ve2-Ha-Edw" customClass="ConexoesViewerController" customModule="Memory_Lane" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eQQ-FY-M6A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +290,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLG-0K-u1y" customClass="LineGraphView" customModule="Companion" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLG-0K-u1y" customClass="LineGraphView" customModule="Memory_Lane" customModuleProvider="target">
                                 <rect key="frame" x="41.5" y="331" width="331" height="179"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>

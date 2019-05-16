@@ -33,13 +33,13 @@
         <!--Ratings Controller-->
         <scene sceneID="1nM-Yr-SSn">
             <objects>
-                <tableViewController id="0vG-sQ-852" customClass="RatingsController" customModule="Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0vG-sQ-852" customClass="RatingsController" customModule="Memory_Lane" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="USD-R5-u5O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="362.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectionCell1" id="6Ll-E6-r2Q" customClass="ConnectionTableViewCell" customModule="Companion" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectionCell1" id="6Ll-E6-r2Q" customClass="ConnectionTableViewCell" customModule="Memory_Lane" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Ll-E6-r2Q" id="Cx3-lH-CVd">
@@ -63,7 +63,7 @@
         <!--Home-->
         <scene sceneID="1Zq-gR-zAW">
             <objects>
-                <viewController title="Home" id="pYw-Vi-mFe" customClass="MainViewController" customModule="Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="pYw-Vi-mFe" customClass="MainViewController" customModule="Memory_Lane" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mf7-Om-fYt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
                                             <constraint firstItem="kUw-Ri-2lw" firstAttribute="leading" secondItem="Aff-LR-qjV" secondAttribute="leading" id="v5o-oD-IqV"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdt-OV-njn" userLabel="LastMoodsGraph" customClass="LineGraphView" customModule="Companion" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdt-OV-njn" userLabel="LastMoodsGraph" customClass="LineGraphView" customModule="Memory_Lane" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="362.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="g9T-oU-U5Q" userLabel="Week Label">
@@ -283,9 +283,6 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

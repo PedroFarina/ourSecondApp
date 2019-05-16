@@ -19,7 +19,7 @@ class EventTableViewCell: UITableViewCell {
         if let _ = imgIcon{
             imgIcon.layer.cornerRadius = imgIcon.frame.height/2
             imgIcon.layer.borderWidth = 1
-            imgIcon.layer.borderColor = #colorLiteral(red: 0.9168350101, green: 0.279589951, blue: 0.4638584256, alpha: 1)
+            imgIcon.layer.borderColor = #colorLiteral(red: 0.8470588235, green: 0.3294117647, blue: 0.4666666667, alpha: 1)
         }
     }
 }

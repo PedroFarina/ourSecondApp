@@ -10,6 +10,7 @@ import Foundation
 
 public class GeneralProperties{
     static let highlightedSufix:String = "Highlighted"
+    static let sliderSufix:String = "Slider"
     
     static let ratingImagesPrefix:String = "rating"
     static let ratingPathImage01:String = ratingImagesPrefix + "01"

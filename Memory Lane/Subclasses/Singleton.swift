@@ -62,6 +62,7 @@ public class ModelManager{
         let newConnection = NSEntityDescription.insertNewObject(forEntityName: "PersonCard", into: context) as! PersonCard
         newConnection.feed(name: name, photo: photo, ratingInicial: ratingInicial)
         _connections.append(newConnection)
+        _ratings.append(newConnection.ratings?.firstObject as! Rating)
         do{
             try context.save()
         }
@@ -76,6 +77,7 @@ public class ModelManager{
         if target.modifyDefault(newName: newName, newPhoto: newPhoto, newRating: newRating){
             do{
                 try context.save()
+                _ratings = try context.fetch(Rating.fetchRequest())
                 notify()
                 return ModelStatus(successful: true)
             }
@@ -89,7 +91,10 @@ public class ModelManager{
     public func removeConnection(at:Int) -> ModelStatus{
         if at < _connections.count && at >= 0{
             if let photoPath = _connections[at].photoPath{
-                FileHelper.deleteImage(filePathWithoutExtension: photoPath)
+                let _ = FileHelper.deleteImage(filePathWithoutExtension: photoPath)
+            }
+            for rating in _connections[at].ratings?.array as! [Rating]{
+                context.delete(rating)
             }
             context.delete(_connections[at])
             _connections.remove(at: at)
@@ -127,6 +132,10 @@ public class ModelManager{
         notify()
         return ModelStatus(successful: true)
     }
+    //Edit
+    //public func editEvent(target:EventCard, name:String?, photo:UIImage?, address:String?, date:NSDate?, persons:[PersonCard]) -> ModelStatus{
+        
+    //}
     //Remove
     public func removeEvent(at:Int) -> ModelStatus{
         if at < _events.count && at >= 0 {
@@ -147,15 +156,27 @@ public class ModelManager{
     // MARK: Ratings Accessors
     public var ratings:[Rating]{
         get{
-            do{
-                return try context.fetch(Rating.fetchRequest())
-            }
-            catch{
-                fatalError()
-            }
-            /*var copy:[Rating] = []
+            var copy:[Rating] = []
             copy.append(contentsOf: _ratings)
-            return copy*/
+            return copy
         }
+    }
+    
+    //Rating Connections
+    public func rateConnection(target:PersonCard,rating ratingValue:Decimal){
+        let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
+        rating.value = NSDecimalNumber(decimal:ratingValue)
+        rating.date = NSDate()
+        target.addToRatings(rating)
+        _ratings.append(rating)
+    }
+    
+    //Rating Events
+    public func rateEvent(target:EventCard, rating ratingValue:Decimal){
+        let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
+        rating.value = NSDecimalNumber(decimal: ratingValue)
+        rating.date = NSDate()
+        target.rating = rating
+        _ratings.append(rating)
     }
 }
