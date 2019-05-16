@@ -57,7 +57,7 @@
 		0243D7E7228BC07D0022D65E /* EventosViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosViewerController.swift; sourceTree = "<group>"; };
 		0288463F228CB06D003C532A /* TableViewDatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDatePickerController.swift; sourceTree = "<group>"; };
 		0297AC0422849E6200BA98B6 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
-		029DA3602283634600150B55 /* Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		029DA3602283634600150B55 /* Memory Lane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memory Lane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029DA3632283634600150B55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029DA36B2283634600150B55 /* Companion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Companion.xcdatamodel; sourceTree = "<group>"; };
 		029DA3702283634700150B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		029DA3572283634600150B55 = {
 			isa = PBXGroup;
 			children = (
-				029DA3622283634600150B55 /* Companion */,
+				029DA3622283634600150B55 /* Memory Lane */,
 				029DA3612283634600150B55 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,12 +148,12 @@
 		029DA3612283634600150B55 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				029DA3602283634600150B55 /* Companion.app */,
+				029DA3602283634600150B55 /* Memory Lane.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		029DA3622283634600150B55 /* Companion */ = {
+		029DA3622283634600150B55 /* Memory Lane */ = {
 			isa = PBXGroup;
 			children = (
 				02B6777B2286166C00512255 /* Views */,
@@ -165,7 +165,7 @@
 				029DA36F2283634700150B55 /* LaunchScreen.storyboard */,
 				029DA3722283634700150B55 /* Info.plist */,
 			);
-			path = Companion;
+			path = "Memory Lane";
 			sourceTree = "<group>";
 		};
 		02B677762285ED1E00512255 /* Subclasses */ = {
@@ -243,9 +243,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		029DA35F2283634600150B55 /* Companion */ = {
+		029DA35F2283634600150B55 /* Memory Lane */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 029DA3752283634700150B55 /* Build configuration list for PBXNativeTarget "Companion" */;
+			buildConfigurationList = 029DA3752283634700150B55 /* Build configuration list for PBXNativeTarget "Memory Lane" */;
 			buildPhases = (
 				029DA35C2283634600150B55 /* Sources */,
 				029DA35D2283634600150B55 /* Frameworks */,
@@ -255,9 +255,9 @@
 			);
 			dependencies = (
 			);
-			name = Companion;
+			name = "Memory Lane";
 			productName = Companion;
-			productReference = 029DA3602283634600150B55 /* Companion.app */;
+			productReference = 029DA3602283634600150B55 /* Memory Lane.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -275,7 +275,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 029DA35B2283634600150B55 /* Build configuration list for PBXProject "Companion" */;
+			buildConfigurationList = 029DA35B2283634600150B55 /* Build configuration list for PBXProject "Memory Lane" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -288,7 +288,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				029DA35F2283634600150B55 /* Companion */,
+				029DA35F2283634600150B55 /* Memory Lane */,
 			);
 		};
 /* End PBXProject section */
@@ -484,7 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BVZY57RJZG;
-				INFOPLIST_FILE = Companion/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Memory Lane/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,7 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BVZY57RJZG;
-				INFOPLIST_FILE = Companion/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Memory Lane/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -517,7 +517,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		029DA35B2283634600150B55 /* Build configuration list for PBXProject "Companion" */ = {
+		029DA35B2283634600150B55 /* Build configuration list for PBXProject "Memory Lane" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				029DA3732283634700150B55 /* Debug */,
@@ -526,7 +526,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		029DA3752283634700150B55 /* Build configuration list for PBXNativeTarget "Companion" */ = {
+		029DA3752283634700150B55 /* Build configuration list for PBXNativeTarget "Memory Lane" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				029DA3762283634700150B55 /* Debug */,
