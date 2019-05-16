@@ -181,14 +181,16 @@ public class ModelManager{
     
     //Rating Events
     public func rateEvent(target:EventCard, rating ratingValue:Decimal) -> ModelStatus{
+        let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
+        target.rating = rating
+        rating.value = NSDecimalNumber(decimal: ratingValue)
+        rating.date = NSDate()
+        
         for person in target.persons!.array as! [PersonCard]{
-            let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
-            target.rating = rating
-            rating.value = NSDecimalNumber(decimal: ratingValue)
-            rating.date = NSDate()
             person.addToRatings(rating)
-            _ratings.append(rating)
         }
+        
+        _ratings.append(rating)
         do{
             try context.save()
             notify()

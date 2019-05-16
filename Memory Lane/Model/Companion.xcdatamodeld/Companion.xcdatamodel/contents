@@ -8,22 +8,22 @@
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="persons" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="PersonCard" inverseName="events" inverseEntity="PersonCard" syncable="YES"/>
-        <relationship name="rating" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rating" inverseName="event" inverseEntity="Rating" syncable="YES"/>
+        <relationship name="rating" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Rating" inverseName="event" inverseEntity="Rating" syncable="YES"/>
     </entity>
     <entity name="PersonCard" representedClassName=".PersonCard" parentEntity="Card" syncable="YES">
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="EventCard" inverseName="persons" inverseEntity="EventCard" syncable="YES"/>
-        <relationship name="ratings" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Rating" inverseName="person" inverseEntity="Rating" syncable="YES"/>
+        <relationship name="ratings" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Rating" inverseName="persons" inverseEntity="Rating" syncable="YES"/>
     </entity>
     <entity name="Rating" representedClassName=".Rating" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventCard" inverseName="rating" inverseEntity="EventCard" syncable="YES"/>
-        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonCard" inverseName="ratings" inverseEntity="PersonCard" syncable="YES"/>
+        <relationship name="persons" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="PersonCard" inverseName="ratings" inverseEntity="PersonCard" syncable="YES"/>
     </entity>
     <elements>
         <element name="Card" positionX="378.10546875" positionY="-990.78125" width="128" height="73"/>
-        <element name="EventCard" positionX="190.015625" positionY="-558.359375" width="128" height="105"/>
+        <element name="EventCard" positionX="190.015625" positionY="-558.359375" width="128" height="103"/>
         <element name="PersonCard" positionX="488.625" positionY="-580.359375" width="128" height="73"/>
-        <element name="Rating" positionX="723.82421875" positionY="-191.546875" width="128" height="105"/>
+        <element name="Rating" positionX="723.82421875" positionY="-191.546875" width="128" height="103"/>
     </elements>
 </model>

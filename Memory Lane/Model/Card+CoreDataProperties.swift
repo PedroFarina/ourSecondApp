@@ -1,8 +1,8 @@
 //
 //  Card+CoreDataProperties.swift
-//  Companion
+//  Memory Lane
 //
-//  Created by Pedro Giuliano Farina on 08/05/19.
+//  Created by Pedro Giuliano Farina on 16/05/19.
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.
 //
 //
