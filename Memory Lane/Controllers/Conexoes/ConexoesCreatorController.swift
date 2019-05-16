@@ -1,6 +1,6 @@
 //
 //  ConexoesCreatorController.swift
-//  Companion
+//  Memory Lane
 //
 //  Created by Pedro Giuliano Farina on 15/05/19.
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.

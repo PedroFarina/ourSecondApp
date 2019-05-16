@@ -505,8 +505,8 @@
     </scenes>
     <resources>
         <image name="eventCard" width="250.5" height="184.5"/>
-        <image name="eventIcon" width="36.5" height="26.5"/>
-        <image name="eventIcon2" width="36.5" height="26.5"/>
+        <image name="eventIcon" width="25" height="27.5"/>
+        <image name="eventIcon2" width="25" height="27.5"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="r9R-sR-Z4Z"/>

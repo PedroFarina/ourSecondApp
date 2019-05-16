@@ -163,20 +163,39 @@ public class ModelManager{
     }
     
     //Rating Connections
-    public func rateConnection(target:PersonCard,rating ratingValue:Decimal){
+    public func rateConnection(target:PersonCard,rating ratingValue:Decimal) -> ModelStatus{
         let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
         rating.value = NSDecimalNumber(decimal:ratingValue)
         rating.date = NSDate()
         target.addToRatings(rating)
         _ratings.append(rating)
+        do{
+            try context.save()
+            notify()
+            return ModelStatus(successful: true)
+        }
+        catch{
+            return ModelStatus(successful: false, description: "Não foi possível avaliar a pessoa")
+        }
     }
     
     //Rating Events
-    public func rateEvent(target:EventCard, rating ratingValue:Decimal){
-        let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
-        rating.value = NSDecimalNumber(decimal: ratingValue)
-        rating.date = NSDate()
-        target.rating = rating
-        _ratings.append(rating)
+    public func rateEvent(target:EventCard, rating ratingValue:Decimal) -> ModelStatus{
+        for person in target.persons!.array as! [PersonCard]{
+            let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
+            target.rating = rating
+            rating.value = NSDecimalNumber(decimal: ratingValue)
+            rating.date = NSDate()
+            person.addToRatings(rating)
+            _ratings.append(rating)
+        }
+        do{
+            try context.save()
+            notify()
+            return ModelStatus(successful: true)
+        }
+        catch{
+            return ModelStatus(successful: false, description: "Não foi possível avaliar o evento")
+        }
     }
 }

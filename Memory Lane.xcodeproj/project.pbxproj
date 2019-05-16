@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02020ACC228725B40013E4D1 /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02020ACA228725B40013E4D1 /* ConnectionTableViewCell.swift */; };
 		02020AD22287264A0013E4D1 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02020AD02287264A0013E4D1 /* EventTableViewCell.swift */; };
 		02020AD522874B080013E4D1 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02020AD422874B080013E4D1 /* Properties.swift */; };
 		021F9F5F228DC7D400C96E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021F9F5E228DC7D400C96E3E /* Assets.xcassets */; };
@@ -17,6 +16,10 @@
 		0243D7E8228BC07D0022D65E /* EventosViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0243D7E7228BC07D0022D65E /* EventosViewerController.swift */; };
 		02884640228CB06D003C532A /* TableViewDatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288463F228CB06D003C532A /* TableViewDatePickerController.swift */; };
 		028AB22E228DF8BA007A52FA /* DesignableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AB22D228DF8BA007A52FA /* DesignableSlider.swift */; };
+		028AB233228E06E4007A52FA /* ConexoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AB22F228E06E4007A52FA /* ConexoesController.swift */; };
+		028AB234228E06E4007A52FA /* ConexoesViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AB230228E06E4007A52FA /* ConexoesViewerController.swift */; };
+		028AB235228E06E4007A52FA /* ConexoesCreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AB231228E06E4007A52FA /* ConexoesCreatorController.swift */; };
+		028AB238228E078A007A52FA /* ConnectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AB237228E078A007A52FA /* ConnectionsTableViewCell.swift */; };
 		0297AC0522849E6200BA98B6 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297AC0422849E6200BA98B6 /* Singleton.swift */; };
 		029DA3642283634600150B55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029DA3632283634600150B55 /* AppDelegate.swift */; };
 		029DA36C2283634600150B55 /* Companion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 029DA36A2283634600150B55 /* Companion.xcdatamodeld */; };
@@ -37,9 +40,6 @@
 		02B85240228C777300EC7403 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8523F228C777300EC7403 /* RatingController.swift */; };
 		02B85242228C788A00EC7403 /* Rating.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B85241228C788A00EC7403 /* Rating.storyboard */; };
 		02DCB8BE228C8E7100C354A7 /* Connections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02DCB8BD228C8E7100C354A7 /* Connections.storyboard */; };
-		02DCB8C1228C8E9B00C354A7 /* ConexoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCB8C0228C8E9B00C354A7 /* ConexoesController.swift */; };
-		02DCB8C3228C8EC200C354A7 /* ConexoesViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCB8C2228C8EC200C354A7 /* ConexoesViewerController.swift */; };
-		02DCB8C5228C8EED00C354A7 /* ConexoesCreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCB8C4228C8EED00C354A7 /* ConexoesCreatorController.swift */; };
 		02DCB8C9228C8FC100C354A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02DCB8C8228C8FC100C354A7 /* Main.storyboard */; };
 		02DCB8CD228C8FEE00C354A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCB8CC228C8FEE00C354A7 /* ViewController.swift */; };
 		02DCB8CF228C900000C354A7 /* LineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCB8CE228C900000C354A7 /* LineGraphView.swift */; };
@@ -48,7 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02020ACA228725B40013E4D1 /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		02020AD02287264A0013E4D1 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		02020AD422874B080013E4D1 /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		021F9F5E228DC7D400C96E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +57,10 @@
 		0243D7E7228BC07D0022D65E /* EventosViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosViewerController.swift; sourceTree = "<group>"; };
 		0288463F228CB06D003C532A /* TableViewDatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDatePickerController.swift; sourceTree = "<group>"; };
 		028AB22D228DF8BA007A52FA /* DesignableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSlider.swift; sourceTree = "<group>"; };
+		028AB22F228E06E4007A52FA /* ConexoesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConexoesController.swift; sourceTree = "<group>"; };
+		028AB230228E06E4007A52FA /* ConexoesViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConexoesViewerController.swift; sourceTree = "<group>"; };
+		028AB231228E06E4007A52FA /* ConexoesCreatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConexoesCreatorController.swift; sourceTree = "<group>"; };
+		028AB237228E078A007A52FA /* ConnectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsTableViewCell.swift; sourceTree = "<group>"; };
 		0297AC0422849E6200BA98B6 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		029DA3602283634600150B55 /* Memory Lane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memory Lane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029DA3632283634600150B55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,9 +83,6 @@
 		02B8523F228C777300EC7403 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 		02B85241228C788A00EC7403 /* Rating.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rating.storyboard; sourceTree = "<group>"; };
 		02DCB8BD228C8E7100C354A7 /* Connections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connections.storyboard; sourceTree = "<group>"; };
-		02DCB8C0228C8E9B00C354A7 /* ConexoesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConexoesController.swift; sourceTree = "<group>"; };
-		02DCB8C2228C8EC200C354A7 /* ConexoesViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConexoesViewerController.swift; sourceTree = "<group>"; };
-		02DCB8C4228C8EED00C354A7 /* ConexoesCreatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConexoesCreatorController.swift; sourceTree = "<group>"; };
 		02DCB8C8228C8FC100C354A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		02DCB8CC228C8FEE00C354A7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02DCB8CE228C900000C354A7 /* LineGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineGraphView.swift; sourceTree = "<group>"; };
@@ -208,7 +208,6 @@
 				02B8523E228C776100EC7403 /* Rating */,
 				0243D7E0228BAC780022D65E /* Eventos */,
 				02DCB8CC228C8FEE00C354A7 /* ViewController.swift */,
-				02020ACA228725B40013E4D1 /* ConnectionTableViewCell.swift */,
 				02EA905D2289FB0100F6A4D9 /* imagePickerController.swift */,
 			);
 			path = Controllers;
@@ -236,9 +235,10 @@
 		02DCB8BF228C8E7C00C354A7 /* Conexoes */ = {
 			isa = PBXGroup;
 			children = (
-				02DCB8C0228C8E9B00C354A7 /* ConexoesController.swift */,
-				02DCB8C2228C8EC200C354A7 /* ConexoesViewerController.swift */,
-				02DCB8C4228C8EED00C354A7 /* ConexoesCreatorController.swift */,
+				028AB22F228E06E4007A52FA /* ConexoesController.swift */,
+				028AB231228E06E4007A52FA /* ConexoesCreatorController.swift */,
+				028AB230228E06E4007A52FA /* ConexoesViewerController.swift */,
+				028AB237228E078A007A52FA /* ConnectionsTableViewCell.swift */,
 			);
 			path = Conexoes;
 			sourceTree = "<group>";
@@ -322,31 +322,31 @@
 				028AB22E228DF8BA007A52FA /* DesignableSlider.swift in Sources */,
 				029DA3872283691D00150B55 /* Rating+CoreDataProperties.swift in Sources */,
 				02884640228CB06D003C532A /* TableViewDatePickerController.swift in Sources */,
-				02020ACC228725B40013E4D1 /* ConnectionTableViewCell.swift in Sources */,
 				029DA36C2283634600150B55 /* Companion.xcdatamodeld in Sources */,
 				029DA3832283691D00150B55 /* Card+CoreDataProperties.swift in Sources */,
 				02B6777D2286177E00512255 /* ModelStatus.swift in Sources */,
 				029DA3812283691D00150B55 /* PersonCard+CoreDataProperties.swift in Sources */,
+				028AB234228E06E4007A52FA /* ConexoesViewerController.swift in Sources */,
 				029DA3852283691D00150B55 /* EventCard+CoreDataProperties.swift in Sources */,
 				02020AD522874B080013E4D1 /* Properties.swift in Sources */,
 				02B8523D228C581700EC7403 /* PersonsViewController.swift in Sources */,
 				02DCB8CF228C900000C354A7 /* LineGraphView.swift in Sources */,
 				02EA9060228A03A500F6A4D9 /* fileHelper.swift in Sources */,
-				02DCB8C5228C8EED00C354A7 /* ConexoesCreatorController.swift in Sources */,
 				029DA3822283691D00150B55 /* Card+CoreDataClass.swift in Sources */,
 				02020AD22287264A0013E4D1 /* EventTableViewCell.swift in Sources */,
-				02DCB8C3228C8EC200C354A7 /* ConexoesViewerController.swift in Sources */,
+				028AB235228E06E4007A52FA /* ConexoesCreatorController.swift in Sources */,
 				029DA3802283691D00150B55 /* PersonCard+CoreDataClass.swift in Sources */,
 				0243D7E6228BACFF0022D65E /* EventosCreatorController.swift in Sources */,
 				029DA3862283691D00150B55 /* Rating+CoreDataClass.swift in Sources */,
+				028AB238228E078A007A52FA /* ConnectionsTableViewCell.swift in Sources */,
 				029DA3642283634600150B55 /* AppDelegate.swift in Sources */,
 				02B677782285EDA500512255 /* ArrayNotifier.swift in Sources */,
 				0243D7E2228BACCC0022D65E /* EventosController.swift in Sources */,
-				02DCB8C1228C8E9B00C354A7 /* ConexoesController.swift in Sources */,
 				0243D7E4228BACEC0022D65E /* EventosTableViewController.swift in Sources */,
 				0297AC0522849E6200BA98B6 /* Singleton.swift in Sources */,
 				02EA905E2289FB0100F6A4D9 /* imagePickerController.swift in Sources */,
 				0243D7E8228BC07D0022D65E /* EventosViewerController.swift in Sources */,
+				028AB233228E06E4007A52FA /* ConexoesController.swift in Sources */,
 				02B85240228C777300EC7403 /* RatingController.swift in Sources */,
 				02B6777F22861BDE00512255 /* DataModifiedDelegate.swift in Sources */,
 			);

@@ -50,6 +50,7 @@ class RatingController : UIViewController{
         else{
             fatalError()
         }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnCancel(sender:Any?){
