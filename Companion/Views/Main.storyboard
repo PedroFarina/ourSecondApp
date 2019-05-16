@@ -261,6 +261,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.84705882352941175" green="0.32941176470588235" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="bQg-vl-KlO" kind="relationship" relationship="viewControllers" id="OZQ-oe-E38"/>
@@ -281,6 +282,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HuW-E8-Jmr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -297,4 +302,5 @@
         <image name="mainIcon2" width="27.5" height="26.5"/>
         <image name="teste" width="1080" height="720"/>
     </resources>
+    <color key="tintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

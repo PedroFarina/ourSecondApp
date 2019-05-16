@@ -27,7 +27,6 @@ public class EventCard: Card {
         self.date = date
         for person in persons{
             self.addToPersons(person)
-            person.addToEvents(self)
         }
     }
 }
