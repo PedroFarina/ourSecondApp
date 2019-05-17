@@ -35,7 +35,7 @@ class EventosViewerController:UIViewController{
         }
     }
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool){
         df.dateFormat = "dd-MM-yy hh:mm"
         navigationItem.title = eventoAtual.name
         lblDate.text = df.string(from: eventoAtual.date! as Date)

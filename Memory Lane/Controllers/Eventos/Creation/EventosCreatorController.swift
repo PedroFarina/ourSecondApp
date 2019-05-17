@@ -20,6 +20,9 @@ class EventosCreatorController : ViewController{
         if let eventoAtual = eventoAtual{
             navigationItem.title = "Editar Evento"
             navigationItem.rightBarButtonItem?.title = "Save"
+            tbViewController.titulo = eventoAtual.name
+            tbViewController.date = eventoAtual.date! as Date
+            tbViewController.endereco = eventoAtual.address
             btnDone.isEnabled = true
             if let path = eventoAtual.photoPath{
                 let answer:String? = FileHelper.getFile(filePathWithoutExtension: path)
@@ -40,6 +43,9 @@ class EventosCreatorController : ViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tbViewController = segue.destination as? TableViewEventFormController{
             self.tbViewController = tbViewController
+            if let eventoAtual = eventoAtual{
+                tbViewController.persons = eventoAtual.persons?.array as! [PersonCard]
+            }
             tbViewController.btnDone = btnDone
             //self.tbViewController = tbViewController
         }
@@ -57,8 +63,11 @@ class EventosCreatorController : ViewController{
             newPhoto = imgEvento.image
         }
         
-        if eventoAtual != nil{
-            //            evento.feed(name: "", photoPath: "", address: "", date: nil, persons: nil)
+        if let eventoAtual = eventoAtual{
+            let status:ModelStatus = ModelManager.shared().editEvent(target: eventoAtual, newName: tbViewController.titulo, newPhoto: newPhoto, newAddress: tbViewController.endereco, newDate: tbViewController.date as NSDate, persons: tbViewController.persons)
+            if(!status.successful){
+                fatalError(status.description)
+            }
         }
         else{
             let status:ModelStatus = ModelManager.shared().addEvent(name: tbViewController.titulo!, photo: newPhoto, address: tbViewController.endereco, date: tbViewController.date as NSDate, persons:tbViewController.persons)

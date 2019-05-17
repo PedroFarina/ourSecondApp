@@ -93,9 +93,6 @@ public class ModelManager{
             if let photoPath = _connections[at].photoPath{
                 let _ = FileHelper.deleteImage(filePathWithoutExtension: photoPath)
             }
-            for rating in _connections[at].ratings?.array as! [Rating]{
-                context.delete(rating)
-            }
             context.delete(_connections[at])
             _connections.remove(at: at)
             do{
@@ -133,9 +130,20 @@ public class ModelManager{
         return ModelStatus(successful: true)
     }
     //Edit
-    //public func editEvent(target:EventCard, name:String?, photo:UIImage?, address:String?, date:NSDate?, persons:[PersonCard]) -> ModelStatus{
+    public func editEvent(target:EventCard, newName:String?, newPhoto:UIImage?, newAddress:String?, newDate:NSDate?, persons:[PersonCard]) -> ModelStatus{
+        if target.modifyDefault(newName: newName, newPhoto: newPhoto, newAddress: newAddress, newDate: newDate, persons: persons){
+            do{
+                try context.save()
+                notify()
+                return ModelStatus(successful: true)
+            }
+            catch{
+                return ModelStatus(successful: false, description: "Não foi possível editar o evento")
+            }
+        }
         
-    //}
+        return ModelStatus(successful: true, description: "Não houve modificações")
+    }
     //Remove
     public func removeEvent(at:Int) -> ModelStatus{
         if at < _events.count && at >= 0 {
@@ -181,7 +189,17 @@ public class ModelManager{
     
     //Rating Events
     public func rateEvent(target:EventCard, rating ratingValue:Decimal) -> ModelStatus{
-        let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
+        var rating:Rating!
+        if let oldRating = target.rating{
+            rating = oldRating
+            _ratings.remove(at: _ratings.firstIndex(of: rating)!)
+            for person in target.persons!.array as! [PersonCard]{
+                person.removeFromRatings(rating)
+            }
+        }
+        else{
+            rating = (NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating)
+        }
         target.rating = rating
         rating.value = NSDecimalNumber(decimal: ratingValue)
         rating.date = NSDate()
@@ -189,7 +207,6 @@ public class ModelManager{
         for person in target.persons!.array as! [PersonCard]{
             person.addToRatings(rating)
         }
-        
         _ratings.append(rating)
         do{
             try context.save()

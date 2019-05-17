@@ -311,7 +311,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" style="plain" id="xBf-KE-3hM">
-                            <color key="tintColor" red="0.74901960779999999" green="0.43921568630000002" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="btnSaveTap:" destination="bco-ft-rs0" id="tzy-RC-ucG"/>
                             </connections>

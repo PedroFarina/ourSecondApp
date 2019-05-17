@@ -33,15 +33,19 @@ public class PersonCard: Card {
     
     func modifyDefault(newName:String?, newPhoto:UIImage?, newRating:Decimal?) -> Bool{
         var hasModifications:Bool = false
-        if newName != name{
-            name = newName
-            hasModifications = true
+        
+        if let newName = newName{
+            if newName != name{
+                name = newName
+                hasModifications = true
+            }
         }
+        
         
         if let newPhoto = newPhoto{
             df.dateFormat = "dd-MM-yyyy hh:mm:ssZ"
             if let actualPhotoPath = photoPath{
-                FileHelper.deleteImage(filePathWithoutExtension: actualPhotoPath)
+                let _ = FileHelper.deleteImage(filePathWithoutExtension: actualPhotoPath)
             }
             
             let photoPath = df.string(from: Date())

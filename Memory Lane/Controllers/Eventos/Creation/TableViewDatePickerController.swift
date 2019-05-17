@@ -21,18 +21,27 @@ class TableViewEventFormController:UITableViewController, PersonSelectedDelegate
         get{
             return datePickerCell.dtPicker.date
         }
+        set{
+            datePickerCell.dtPicker.date = newValue
+        }
     }
     var titulo:String?{
         get{
             return tituloCell.txtTitulo.text
+        }
+        set{
+            tituloCell.txtTitulo.text = newValue
         }
     }
     var endereco:String?{
         get{
             return localeCell.txtTitulo.text
         }
+        set{
+            localeCell.txtTitulo.text = newValue
+        }
     }
-    public private(set) var persons:[PersonCard] = []
+    public var persons:[PersonCard] = []
     private var tituloCell:TextCell!
     private var localeCell:TextCell!
     private var datePickerCell:DatePickerCell!

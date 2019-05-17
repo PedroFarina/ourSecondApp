@@ -45,17 +45,19 @@ public class ConexoesController : UITableViewController, DataModifiedDelegate{
     }
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "connectionCell") as! ConnectionTableViewCell
+        var cell:UITableViewCell!
         let connectionAtual = connections[indexPath.row]
-        cell.connectionName.text = connectionAtual.name
+        
         //        cell.textLabel?.text = connections[indexPath.row].name
         
         if let path = connectionAtual.photoPath{
+            let conCell = tableView.dequeueReusableCell(withIdentifier: "connectionCell") as! ConnectionTableViewCell
+            conCell.connectionName.text = connectionAtual.name
             let answer:String? = FileHelper.getFile(filePathWithoutExtension: path)
             if let answer = answer{
-                cell.connectionImage.image = UIImage(contentsOfFile: answer)              
+                conCell.connectionImage.image = UIImage(contentsOfFile: answer)
             }
-            let personImage = cell.connectionImage
+            let personImage = conCell.connectionImage
             
             
             switch connectionAtual.rating(){
@@ -76,19 +78,22 @@ public class ConexoesController : UITableViewController, DataModifiedDelegate{
                 personImage?.layer.borderWidth = 0
                 
             }
-
-
             
-            
-            
-            
+            cell = conCell
+        }
+        else{
+            cell = tableView.dequeueReusableCell(withIdentifier: "connectionCellNoPhoto")
+            cell.textLabel?.text = connectionAtual.name
         }
         //        cell.imageView? = connections[indexPath.row].photoPath
         return cell
     }
     
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        if let _ = connections[indexPath.row].photoPath {
+            return 150
+        }
+        return 65
     }
     
     
