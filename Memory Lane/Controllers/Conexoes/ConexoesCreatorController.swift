@@ -9,17 +9,26 @@
 import Foundation
 import UIKit
 
-class ConexoesCreatorController: ViewController{
+class ConexoesCreatorController: ViewController, UITextFieldDelegate{
     var connectionAtual:PersonCard?
     private var imgChanged:Bool = false
     private var rating:Int = 3
     @IBOutlet var imgConnection: UIImageView!
     @IBOutlet weak var lastImage: UIImageView!
     @IBOutlet var imagesView: [UIImageView]!
-    let imgPicker:ImagePickerManager = ImagePickerManager()
+    var imgPicker:ImagePickerManager!
     
     @IBOutlet var txtName: UITextField!
     @IBOutlet var btnDone: UIBarButtonItem!
+    
+    override func viewDidLoad() {
+        txtName.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
     
     @IBAction func editionChanged(_ sender: UITextField) {
         if(sender.text?.count == 1){
@@ -40,6 +49,7 @@ class ConexoesCreatorController: ViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        imgConnection.layer.cornerRadius = imgConnection.frame.height/2
         if let con = connectionAtual{
             btnDone.isEnabled = true
             txtName.text = con.name
@@ -54,11 +64,11 @@ class ConexoesCreatorController: ViewController{
         lastImage.isHighlighted = true
     }
     
-    @IBOutlet var txtNome: UITextField!
     @IBAction func tapOccur(_ sender: UITapGestureRecognizer) {
         if let img = sender.view as? UIImageView{
             switch img.tag{
             case 0:
+                imgPicker = ImagePickerManager()
                 imgPicker.pickImage(self) { (image) in
                     self.imgConnection.image = image
                     self.imgChanged = true

@@ -8,21 +8,23 @@
 
 import UIKit
 
-//@IBDesignable
+@IBDesignable
 class LineGraphView:UIView{
     @IBInspectable var cornerRadiusSize: CGFloat = 5.0
     @IBInspectable var startColor: UIColor = .red
     @IBInspectable var endColor: UIColor = .green
     @IBInspectable var LineColor: UIColor = .white
-    public var margin:CGFloat = 20.0
-    public var topBorder: CGFloat = 60
-    public var bottomBorder: CGFloat = 100
+    public var margem:CGFloat = 20.0
+    public var topB: CGFloat = 60
+    public var botB: CGFloat = 50
     
-    public var graphPoints:[Int] = [4,3,5]
+    public var graphPoints:[Int] = [1, 2, 3, 4, 5]
     
     
     override func draw(_ rect: CGRect) {
-        
+        for i in 0...graphPoints.count - 1{
+            graphPoints[i] -= 1
+        }
         let path = UIBezierPath(roundedRect: rect,
                                 byRoundingCorners: .allCorners,
                                 cornerRadii: CGSize(width: cornerRadiusSize, height: cornerRadiusSize))
@@ -47,20 +49,20 @@ class LineGraphView:UIView{
                                    options: [])
     
             //        Basic Lines
-            let width = rect.width
+            let width = rect.width - margem
             let height = rect.height
-            let graphWidth = width - margin * 2 - 4
+            let graphWidth = width - margem * 2 - 4
             let columnXPoint = {(column: Int) -> CGFloat in
                 //Calculation of gap between points
                 let spacing = graphWidth / CGFloat(self.graphPoints.count - 1)
-                return CGFloat(column) * spacing + self.margin + 2
+                return CGFloat(column) * spacing + self.margem + 2
             }
     
-            let graphHeight = height - topBorder - bottomBorder
-            let maxValue = graphPoints.max()!
+            let graphHeight = height - topB - botB
+            let maxValue = 4//graphPoints.max()!
             let columnYPoint = { (graphPoint: Int) -> CGFloat in
                 let y = CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight
-                return graphHeight + self.topBorder - y // Flip the graph
+                return graphHeight + self.topB - y // Flip the graph
             }
     
             LineColor.setFill()
@@ -88,8 +90,8 @@ class LineGraphView:UIView{
                 clipplingPath.close()
                 clipplingPath.addClip()
                 let hightestYPoint = columnYPoint(maxValue)
-                let graphStartPoint = CGPoint(x: margin, y: hightestYPoint)
-                let graphEndPoint = CGPoint(x: margin, y: bounds.height)
+                let graphStartPoint = CGPoint(x: margem, y: hightestYPoint)
+                let graphEndPoint = CGPoint(x: margem, y: bounds.height)
                 if let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors as CFArray, locations: [0.0, 1.0]){
                     context.drawLinearGradient(gradient,
                                                start: graphStartPoint,
@@ -119,12 +121,12 @@ class LineGraphView:UIView{
             //        Guiding Lines
             let linePath = UIBezierPath()
         
-            for i in 0...(graphPoints.count - 1){
-                linePath.move(to: CGPoint(x: margin, y: ((graphHeight/(CGFloat(graphPoints.count - 1))) * CGFloat(i)) + topBorder))
-                linePath.addLine(to: CGPoint(x: width - margin, y: ((graphHeight/(CGFloat(graphPoints.count - 1))) * CGFloat(i)) + topBorder))
+            for i in 0...4{
+                linePath.move(to: CGPoint(x: margem, y: ((graphHeight/(CGFloat(4))) * CGFloat(i)) + topB))
+                linePath.addLine(to: CGPoint(x: width - margem, y: ((graphHeight/(CGFloat(4))) * CGFloat(i)) + topB))
             }
-            linePath.move(to: CGPoint(x: margin, y: height - bottomBorder))
-            linePath.addLine(to: CGPoint(x: width - margin, y: height - bottomBorder))
+            linePath.move(to: CGPoint(x: margem, y: height - botB))
+            linePath.addLine(to: CGPoint(x: width - margem, y: height - botB))
             let color = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.1)
             color.setStroke()
             linePath.lineWidth = 1.0
@@ -137,18 +139,16 @@ class LineGraphView:UIView{
         graphPoints = points
     }
     
-    public func setMeasures(margin: CGFloat, topBorder: CGFloat, bottomBorder: CGFloat){
-        self.margin = margin
-        self.topBorder = topBorder
-        self.bottomBorder = bottomBorder
-    }
-    
     public func update(points: [Int]) -> Int{
         self.setGraphPoints(points)
         self.setNeedsDisplay()
-//        self.setMeasures()
         return self.graphPoints.reduce(0, +) / self.graphPoints.count
-        
     }
     
+    public func update(points: [Int], margin: Int, topBorder: Int, bottomBorder: Int) -> Int{
+        self.setGraphPoints(points)
+        self.setNeedsDisplay()
+//        self.setMeasures(margin: CGFloat(margin), topBorder: CGFloat(topBorder), bottomBorder: CGFloat(bottomBorder))
+        return self.graphPoints.reduce(0, +) / self.graphPoints.count
+    } 
 }

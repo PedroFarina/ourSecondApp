@@ -63,13 +63,9 @@ public class EventosTableViewController : UITableViewController{
     override public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let status:ModelStatus = ModelManager.shared().removeEvent(at: indexPath.row)
-            if(status.successful){
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-            else{
+            if(!status.successful){
                 fatalError(status.description)
             }
-            
         }
     }
     

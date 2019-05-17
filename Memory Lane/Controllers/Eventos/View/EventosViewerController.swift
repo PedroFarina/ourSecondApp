@@ -35,6 +35,10 @@ class EventosViewerController:UIViewController{
         }
     }
     
+    override func viewDidLoad() {
+        imgEvento.layer.cornerRadius = imgEvento.frame.height/2
+    }
+    
     override func viewWillAppear(_ animated: Bool){
         df.dateFormat = "dd-MM-yy hh:mm"
         navigationItem.title = eventoAtual.name

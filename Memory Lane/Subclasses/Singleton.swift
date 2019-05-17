@@ -97,6 +97,7 @@ public class ModelManager{
             _connections.remove(at: at)
             do{
                 try context.save()
+                _ratings = try context.fetch(Rating.fetchRequest())
                 notify()
                 return ModelStatus(successful: true)
             }
@@ -148,9 +149,9 @@ public class ModelManager{
     public func removeEvent(at:Int) -> ModelStatus{
         if at < _events.count && at >= 0 {
             context.delete(_events[at])
-            _events.remove(at: at)
             do{
                 try context.save()
+                _ratings = try context.fetch(Rating.fetchRequest())
                 notify()
                 return ModelStatus(successful: true)
             }

@@ -36,7 +36,6 @@ class ConexoesViewerController : ViewController{
         
         contactImage.layer.cornerRadius = contactImage.frame.height/2
         
-        lineGraphView.setMeasures(margin: CGFloat(20), topBorder: CGFloat(10), bottomBorder: CGFloat(10))
         var notas:[Int] = []
         for i in connectionAtual?.ratings?.array as! [Rating]{
             notas.append(i.value?.intValue ?? 0)
@@ -66,7 +65,7 @@ class ConexoesViewerController : ViewController{
 
             }
             
-            lineGraphView.LineColor = navigationController?.navigationBar.barTintColor ?? UIColor.red
+            lineGraphView.LineColor = UIColor(cgColor: contactImage.layer.borderColor ?? UIColor.red as! CGColor)
             
             //contactImage =
             //            imgPicker.pickImage(self) { (image) in
