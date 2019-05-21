@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UIViewController.swift
 //  Companion
 //
 //  Created by Pedro Giuliano Farina on 08/05/19.
@@ -9,9 +9,16 @@
 import UIKit
 import CoreData
 
-class ViewController :UIViewController{
+class MainViewController: UIViewController, DataModifiedDelegate{
+    func DataModified() {
+        <#code#>
+    }
+    func getData(){
+        
+    }
 }
 
+/*
 class MainViewController: UIViewController, DataModifiedDelegate {
     
     
@@ -87,7 +94,6 @@ class MainViewController: UIViewController, DataModifiedDelegate {
             mood = historyGraph.backgroundColor ?? UIColor.white
         }
         historyGraph.LineColor = mood
-//        historyGraph.endColor = historyGraph.startColor
         for i in 0...4 {
             if let image = emojiLabelStack.arrangedSubviews[4 - i] as? UIImageView {
                 image.image = UIImage(named: GeneralProperties.ratingPathImages[i] + GeneralProperties.highlightedSufix)
@@ -108,3 +114,4 @@ class MainViewController: UIViewController, DataModifiedDelegate {
     }
 
 }
+*/

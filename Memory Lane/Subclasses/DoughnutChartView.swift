@@ -8,7 +8,7 @@
 
 import UIKit
 //@IBDesignable
-class DoughnutChartView: UICollectionReusableView {
+class DoughnutChartView: UIView {
     
     public var chartValues:[Int] = [100]{
         didSet{

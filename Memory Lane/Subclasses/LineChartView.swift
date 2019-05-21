@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class LineGraphView:UIView{
+class LineChartView:UIView{
     @IBInspectable var cornerRadiusSize: CGFloat = 5.0
     @IBInspectable var startColor: UIColor = .red
     @IBInspectable var endColor: UIColor = .green
