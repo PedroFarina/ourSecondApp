@@ -16,7 +16,7 @@ class EventosViewerController:UIViewController{
     
     @IBOutlet var imgEvento: UIImageView!
     @IBOutlet var lblDate: UILabel!
-    @IBOutlet var lblEndereco: UILabel!
+    @IBOutlet var lblNome: UILabel!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? PersonsTableViewController{
@@ -36,14 +36,13 @@ class EventosViewerController:UIViewController{
     }
     
     override func viewDidLoad() {
-        imgEvento.layer.cornerRadius = imgEvento.frame.height/2
     }
     
     override func viewWillAppear(_ animated: Bool){
         df.dateFormat = "dd-MM-yy hh:mm"
         navigationItem.title = eventoAtual.name
         lblDate.text = df.string(from: eventoAtual.date! as Date)
-        lblEndereco.text = eventoAtual.address
+        lblNome.text = eventoAtual.name
         if let path = eventoAtual.photoPath{
             let answer:String? = FileHelper.getFile(filePathWithoutExtension: path)
             if let answer = answer{

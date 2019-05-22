@@ -18,8 +18,9 @@ class FileHelper{
     }
     
     public static func saveImage(image:UIImage, nameWithoutExtension:String){
-        if let data = image.pngData(){
-            let filename = getDocumentsDirectory().appendingPathComponent("\(nameWithoutExtension).png")
+        
+        if let data = image.jpegData(compressionQuality: 1) {
+            let filename = getDocumentsDirectory().appendingPathComponent("\(nameWithoutExtension).jpg")
             do{
                 try data.write(to: filename)
             }
@@ -30,7 +31,7 @@ class FileHelper{
     }
     
     public static func getFile(filePathWithoutExtension:String) -> String?{
-        let imagePath:URL = getDocumentsDirectory().appendingPathComponent("\(filePathWithoutExtension).png")
+        let imagePath:URL = getDocumentsDirectory().appendingPathComponent("\(filePathWithoutExtension).jpg")
         if fileManager.fileExists(atPath: imagePath.relativePath){
             return imagePath.relativePath
         }
@@ -41,7 +42,7 @@ class FileHelper{
     
     public static func deleteImage(filePathWithoutExtension:String) -> Bool{
         do{
-            let imagePath:URL = getDocumentsDirectory().appendingPathComponent("\(filePathWithoutExtension).png")
+            let imagePath:URL = getDocumentsDirectory().appendingPathComponent("\(filePathWithoutExtension).jpg")
             if fileManager.fileExists(atPath: imagePath.relativePath){
                 try fileManager.removeItem(at: imagePath)
             }

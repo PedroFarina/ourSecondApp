@@ -35,9 +35,7 @@ class EventosCreatorController : ViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgEvento.layer.cornerRadius = imgEvento.frame.height/2
-        imgEvento.layer.borderWidth = 1
-        imgEvento.layer.borderColor = #colorLiteral(red: 0.9168350101, green: 0.279589951, blue: 0.4638584256, alpha: 1)
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
