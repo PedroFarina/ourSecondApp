@@ -19,4 +19,7 @@ public class GeneralProperties{
     static let ratingPathImage04:String = ratingImagesPrefix + "04"
     static let ratingPathImage05:String = ratingImagesPrefix + "05"
     static let ratingPathImages:[String] = [ratingPathImage01, ratingPathImage02, ratingPathImage03, ratingPathImage04, ratingPathImage05]
+    
+    static let personPlaceHolder:String = "personPlaceHolder"
+    static let eventPlaceHolder:String = "eventPlaceHolder"
 }

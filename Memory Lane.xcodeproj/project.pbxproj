@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		02020AD22287264A0013E4D1 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02020AD02287264A0013E4D1 /* EventTableViewCell.swift */; };
 		02020AD522874B080013E4D1 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02020AD422874B080013E4D1 /* Properties.swift */; };
+		0243487B2295B2D8000BB7D8 /* DoughnutChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0243487A2295B2D8000BB7D8 /* DoughnutChartView.swift */; };
+		0243487F2295C6D2000BB7D8 /* RatingBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0243487E2295C6D2000BB7D8 /* RatingBall.swift */; };
+		024348812295D790000BB7D8 /* RatingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024348802295D790000BB7D8 /* RatingStack.swift */; };
 		0243D7E2228BACCC0022D65E /* EventosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0243D7E1228BACCC0022D65E /* EventosController.swift */; };
 		0243D7E4228BACEC0022D65E /* EventosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0243D7E3228BACEC0022D65E /* EventosTableViewController.swift */; };
 		0243D7E6228BACFF0022D65E /* EventosCreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0243D7E5228BACFF0022D65E /* EventosCreatorController.swift */; };
@@ -53,6 +56,9 @@
 /* Begin PBXFileReference section */
 		02020AD02287264A0013E4D1 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		02020AD422874B080013E4D1 /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		0243487A2295B2D8000BB7D8 /* DoughnutChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoughnutChartView.swift; sourceTree = "<group>"; };
+		0243487E2295C6D2000BB7D8 /* RatingBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBall.swift; sourceTree = "<group>"; };
+		024348802295D790000BB7D8 /* RatingStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStack.swift; sourceTree = "<group>"; };
 		0243D7E1228BACCC0022D65E /* EventosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosController.swift; sourceTree = "<group>"; };
 		0243D7E3228BACEC0022D65E /* EventosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosTableViewController.swift; sourceTree = "<group>"; };
 		0243D7E5228BACFF0022D65E /* EventosCreatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosCreatorController.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 		02B677762285ED1E00512255 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				0243487A2295B2D8000BB7D8 /* DoughnutChartView.swift */,
 				02F92448228F12D10037CFB3 /* LineGraphView.swift */,
 				0297AC0422849E6200BA98B6 /* Singleton.swift */,
 				02B677772285EDA500512255 /* ArrayNotifier.swift */,
@@ -187,6 +194,8 @@
 				02020AD422874B080013E4D1 /* Properties.swift */,
 				02EA905F228A03A500F6A4D9 /* fileHelper.swift */,
 				028AB22D228DF8BA007A52FA /* DesignableSlider.swift */,
+				0243487E2295C6D2000BB7D8 /* RatingBall.swift */,
+				024348802295D790000BB7D8 /* RatingStack.swift */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -355,9 +364,11 @@
 				02020AD22287264A0013E4D1 /* EventTableViewCell.swift in Sources */,
 				028AB235228E06E4007A52FA /* ConexoesCreatorController.swift in Sources */,
 				029DA3802283691D00150B55 /* PersonCard+CoreDataClass.swift in Sources */,
+				0243487B2295B2D8000BB7D8 /* DoughnutChartView.swift in Sources */,
 				0243D7E6228BACFF0022D65E /* EventosCreatorController.swift in Sources */,
 				029DA3862283691D00150B55 /* Rating+CoreDataClass.swift in Sources */,
 				028AB238228E078A007A52FA /* ConnectionsTableViewCell.swift in Sources */,
+				024348812295D790000BB7D8 /* RatingStack.swift in Sources */,
 				029DA3642283634600150B55 /* AppDelegate.swift in Sources */,
 				02B677782285EDA500512255 /* ArrayNotifier.swift in Sources */,
 				02F92449228F12D10037CFB3 /* LineGraphView.swift in Sources */,
@@ -368,6 +379,7 @@
 				0243D7E8228BC07D0022D65E /* EventosViewerController.swift in Sources */,
 				028AB233228E06E4007A52FA /* ConexoesController.swift in Sources */,
 				02B85240228C777300EC7403 /* RatingController.swift in Sources */,
+				0243487F2295C6D2000BB7D8 /* RatingBall.swift in Sources */,
 				02B6777F22861BDE00512255 /* DataModifiedDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,24 +27,114 @@
                                             <constraint firstAttribute="width" secondItem="Ex9-N6-vgX" secondAttribute="height" multiplier="1:1" id="Yi7-sb-t2j"/>
                                         </constraints>
                                     </imageView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" minimumValueImage="xPerson" maximumValueImage="rPerson" translatesAutoresizingMaskIntoConstraints="NO" id="aKX-bc-zyI" customClass="DesignableSlider" customModule="Memory_Lane" customModuleProvider="target">
-                                        <rect key="frame" x="38" y="173" width="338" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hsc-nB-vVp" customClass="RatingStack" customModule="Memory_Lane" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="144" width="384" height="56"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aI-Ec-Ncb" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="56"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.73727327585220337" green="0.231006920337677" blue="0.081604219973087311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyJ-6E-4I3" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="78" y="0.0" width="72.5" height="56"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.73727327585220337" green="0.231006920337677" blue="0.081604219973087311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="-0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J63-lW-gHH" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="155.5" y="0.0" width="73" height="56"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.73727327585220337" green="0.231006920337677" blue="0.081604219973087311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vq-JL-vKX" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="233.5" y="0.0" width="72.5" height="56"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.73727327585220337" green="0.231006920337677" blue="0.081604219973087311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghk-IN-1o9" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="311" y="0.0" width="73" height="56"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.73727327585220337" green="0.231006920337677" blue="0.081604219973087311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="6aI-Ec-Ncb" firstAttribute="leading" secondItem="hsc-nB-vVp" secondAttribute="leading" id="keA-4h-AqJ"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="rating03Slider"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="sliderChangedValue:" destination="aZz-tM-tgk" eventType="valueChanged" id="uVD-R5-na7"/>
+                                            <outletCollection property="RatingBalls" destination="6aI-Ec-Ncb" collectionClass="NSMutableArray" id="waI-Pj-yng"/>
+                                            <outletCollection property="RatingBalls" destination="pyJ-6E-4I3" collectionClass="NSMutableArray" id="HyD-cc-Ayx"/>
+                                            <outletCollection property="RatingBalls" destination="J63-lW-gHH" collectionClass="NSMutableArray" id="wcc-CV-RQ7"/>
+                                            <outletCollection property="RatingBalls" destination="5vq-JL-vKX" collectionClass="NSMutableArray" id="Gdf-Br-kCb"/>
+                                            <outletCollection property="RatingBalls" destination="Ghk-IN-1o9" collectionClass="NSMutableArray" id="ZVo-wk-tlX"/>
                                         </connections>
-                                    </slider>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Ex9-N6-vgX" firstAttribute="top" secondItem="e5w-w0-ki4" secondAttribute="top" constant="5" id="2fl-S4-MGM"/>
                                     <constraint firstItem="Ex9-N6-vgX" firstAttribute="width" secondItem="e5w-w0-ki4" secondAttribute="width" multiplier="0.3" id="8Om-WO-oRk"/>
-                                    <constraint firstItem="aKX-bc-zyI" firstAttribute="top" secondItem="Ex9-N6-vgX" secondAttribute="bottom" constant="44" id="CE1-bb-Vag"/>
+                                    <constraint firstItem="hsc-nB-vVp" firstAttribute="centerX" secondItem="e5w-w0-ki4" secondAttribute="centerX" id="D1h-A5-Wfp"/>
+                                    <constraint firstAttribute="bottom" secondItem="hsc-nB-vVp" secondAttribute="bottom" constant="10" id="FfU-dR-CtY"/>
+                                    <constraint firstAttribute="trailing" secondItem="hsc-nB-vVp" secondAttribute="trailing" constant="15" id="KHW-Ga-aDC"/>
+                                    <constraint firstItem="hsc-nB-vVp" firstAttribute="leading" secondItem="e5w-w0-ki4" secondAttribute="leading" constant="15" id="UN7-cS-2oE"/>
                                     <constraint firstAttribute="width" secondItem="e5w-w0-ki4" secondAttribute="height" multiplier="207:105" id="VoY-7W-CYV"/>
-                                    <constraint firstAttribute="trailing" secondItem="aKX-bc-zyI" secondAttribute="trailing" constant="40" id="dOO-pu-UZ2"/>
-                                    <constraint firstItem="aKX-bc-zyI" firstAttribute="leading" secondItem="e5w-w0-ki4" secondAttribute="leading" constant="40" id="hPf-kU-HlX"/>
+                                    <constraint firstItem="hsc-nB-vVp" firstAttribute="top" secondItem="Ex9-N6-vgX" secondAttribute="bottom" constant="15" id="jhv-bl-Tvl"/>
                                     <constraint firstItem="Ex9-N6-vgX" firstAttribute="centerX" secondItem="e5w-w0-ki4" secondAttribute="centerX" id="rBF-gL-Zj3"/>
                                 </constraints>
                             </view>
@@ -72,7 +162,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imgCard" destination="Ex9-N6-vgX" id="vJS-J2-SIo"/>
-                        <outlet property="sliderRating" destination="aKX-bc-zyI" id="6Sq-mm-1GC"/>
+                        <outlet property="ratingStack" destination="hsc-nB-vVp" id="K0k-6O-hus"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngv-cO-bcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,10 +188,5 @@
             <point key="canvasLocation" x="113.04347826086958" y="728.57142857142856"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="rPerson" width="30" height="30"/>
-        <image name="rating03Slider" width="30.5" height="30.5"/>
-        <image name="xPerson" width="30" height="30"/>
-    </resources>
     <color key="tintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

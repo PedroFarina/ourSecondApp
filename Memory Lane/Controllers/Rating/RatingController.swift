@@ -11,18 +11,20 @@ import UIKit
 
 class RatingController : UIViewController{
     @IBOutlet var imgCard:UIImageView!
+    @IBOutlet var ratingStack:RatingStack!
     var evento:EventCard? = nil
     var pessoa:PersonCard? = nil
-    @IBOutlet var sliderRating: DesignableSlider!
     
     public override func viewDidLoad(){
         view.layer.cornerRadius = 20
         var card:Card
         if let evento = evento{
             card = evento
+            imgCard.image = UIImage(named: GeneralProperties.eventPlaceHolder)
         }
         else{
             card = pessoa!
+            imgCard.image = UIImage(named: GeneralProperties.personPlaceHolder)
         }
         if let name = card.name{
             navigationItem.title = "Avaliar \(name)"
@@ -35,17 +37,13 @@ class RatingController : UIViewController{
         }
     }
     
-    @IBAction func sliderChangedValue(_ sender: Any) {
-        sliderRating.thumbImage = UIImage(named: GeneralProperties.ratingPathImages[Int(sliderRating.value) - 1] + GeneralProperties.sliderSufix)
-    }
-    
     @IBAction func btnDoneTap(sender:Any?){
-        let rating = Decimal(Int(sliderRating.value))
+        let rating = Decimal(Double(ratingStack.value))
         if let evento = evento{
-            ModelManager.shared().rateEvent(target: evento, rating: rating)
+            let _ = ModelManager.shared().rateEvent(target: evento, rating: rating)
         }
         else if let pessoa = pessoa{
-            ModelManager.shared().rateConnection(target: pessoa, rating: rating)
+            let _ = ModelManager.shared().rateConnection(target: pessoa, rating: rating)
         }
         else{
             fatalError()

@@ -16,12 +16,12 @@ class ConnectionTableViewCell: UITableViewCell {
     @IBOutlet weak var connectionImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
         if let _ = connectionImage {
-            connectionImage.layer.borderWidth = 2
             connectionImage.layer.cornerRadius = connectionImage.frame.height/2
         }
+//        containerView.layer.cornerRadius = containerView.frame.height/2
+//        containerView.layer.borderWidth = 1
+//        containerView.layer.borderColor = #colorLiteral(red: 0.1490196139, green: 0.1490196139, blue: 0.1490196139, alpha: 1)
         // Initialization code
     }
     

@@ -202,13 +202,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOK-pV-9DH">
-                                            <rect key="frame" x="149.5" y="11" width="204.5" height="31.5"/>
+                                            <rect key="frame" x="149.5" y="11" width="598.5" height="31.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWs-kg-P3a">
-                                            <rect key="frame" x="323" y="115.5" width="41" height="24"/>
+                                            <rect key="frame" x="717" y="115.5" width="41" height="24"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -349,7 +349,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Titulo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-Px-Y70">
-                                            <rect key="frame" x="20" y="0.0" width="354" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="748" height="43.5"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
@@ -398,7 +398,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rwR-4M-zhj">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="182"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="182"/>
                                             <date key="date" timeIntervalSinceReferenceDate="579646478.08851302">
                                                 <!--2019-05-15 20:54:38 +0000-->
                                             </date>
