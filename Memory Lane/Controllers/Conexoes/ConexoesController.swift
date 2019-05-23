@@ -23,7 +23,9 @@ public class ConexoesController : UITableViewController, DataModifiedDelegate{
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = self
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         navigationItem.leftBarButtonItem = self.editButtonItem
@@ -55,10 +57,6 @@ public class ConexoesController : UITableViewController, DataModifiedDelegate{
             }
         }
         return cell
-    }
-    
-    public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
     }
     
     

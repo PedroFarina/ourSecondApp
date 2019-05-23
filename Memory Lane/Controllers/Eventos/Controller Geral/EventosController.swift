@@ -58,6 +58,7 @@ class EventosController:UIViewController, DataModifiedDelegate{
     
     override func viewDidLoad() {
         navigationItem.leftBarButtonItem = tableViewController.editButtonItem
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         ModelManager.shared().addDelegate(newDelegate:self)
         getData()
     }

@@ -12,12 +12,23 @@ import UIKit
 
 class ConnectionTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var personCell: UIView!
     @IBOutlet weak var connectionName: UILabel!
     @IBOutlet weak var connectionImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         if let _ = connectionImage {
             connectionImage.layer.cornerRadius = connectionImage.frame.height/2
+//            personCell.layer.borderWidth = 0.3
+            personCell.layer.borderColor = UIColor.black.cgColor
+            personCell.layer.cornerRadius = personCell.frame.height/2
+            personCell.layer.shadowOpacity = 6
+            personCell.layer.shadowRadius = 2
+            personCell.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1087698063)
+            personCell.layer.shadowOffset = CGSize(width: 3, height: 3)
+
+            
+            
         }
 //        containerView.layer.cornerRadius = containerView.frame.height/2
 //        containerView.layer.borderWidth = 1
