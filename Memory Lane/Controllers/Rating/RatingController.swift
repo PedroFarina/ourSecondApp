@@ -9,46 +9,57 @@
 import Foundation
 import UIKit
 
-class RatingController : UIViewController{
+class RatingController : UIViewController, RatingSetDelegate{
     @IBOutlet var imgCard:UIImageView!
     @IBOutlet var ratingStack:RatingStack!
+    @IBOutlet var lblName:UILabel!
+    
     var evento:EventCard? = nil
     var pessoa:PersonCard? = nil
+    var pessoas:[PersonCard] = []
+    var contador:Int = 0
     
     public override func viewDidLoad(){
-        view.layer.cornerRadius = 20
-        var card:Card
         if let evento = evento{
-            card = evento
-            imgCard.image = UIImage(named: GeneralProperties.eventPlaceHolder)
+            pessoas = evento.persons?.array as! [PersonCard]
+            navigationItem.title = "Avaliar \(evento.name ?? "Evento")"
+        }
+        if let pessoa = pessoa{
+            pessoas.append(pessoa)
+        }
+        ratingStack.setDelegate(delegate: self)
+        atualizarInfos()
+    }
+    
+    func atualizarInfos(){
+        if contador < pessoas.count{
+            pessoa = pessoas[contador]
+            ratingStack.resetValue()
+            lblName.text = pessoa!.name
+            imgCard.image = UIImage(named: GeneralProperties.personPlaceHolder)
+            
+            if let path = pessoa!.photoPath{
+                let answer:String? = FileHelper.getFile(filePathWithoutExtension: path)
+                if let answer = answer{
+                    imgCard.image = UIImage(contentsOfFile:answer)
+                }
+            }
+            contador += 1
         }
         else{
-            card = pessoa!
-            imgCard.image = UIImage(named: GeneralProperties.personPlaceHolder)
-        }
-        if let name = card.name{
-            navigationItem.title = "Avaliar \(name)"
-        }
-        if let path = card.photoPath{
-            let answer:String? = FileHelper.getFile(filePathWithoutExtension: path)
-            if let answer = answer{
-                imgCard.image = UIImage(contentsOfFile:answer)
-            }
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
-    @IBAction func btnDoneTap(sender:Any?){
+    func RatingDidSet(){
         let rating = Decimal(Double(ratingStack.value))
-        if let evento = evento{
-            let _ = ModelManager.shared().rateEvent(target: evento, rating: rating)
-        }
-        else if let pessoa = pessoa{
-            let _ = ModelManager.shared().rateConnection(target: pessoa, rating: rating)
+        if let pessoa = pessoa{
+            let _ = ModelManager.shared().rateConnection(target: pessoa, rating: rating, inEvent: evento)
+            atualizarInfos()
         }
         else{
             fatalError()
         }
-        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnCancel(sender:Any?){

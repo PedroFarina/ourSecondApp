@@ -172,9 +172,12 @@ public class ModelManager{
     }
     
     //Rating Connections
-    public func rateConnection(target:PersonCard,rating ratingValue:Decimal) -> ModelStatus{
+    public func rateConnection(target:PersonCard,rating ratingValue:Decimal, inEvent event:EventCard?) -> ModelStatus{
         let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
         rating.value = NSDecimalNumber(decimal:ratingValue)
+        if let event = event{
+            rating.event = event
+        }
         rating.date = NSDate()
         target.addToRatings(rating)
         _ratings.append(rating)
@@ -194,9 +197,6 @@ public class ModelManager{
         if let oldRating = target.rating{
             rating = oldRating
             _ratings.remove(at: _ratings.firstIndex(of: rating)!)
-            for person in target.persons!.array as! [PersonCard]{
-                person.removeFromRatings(rating)
-            }
         }
         else{
             rating = (NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating)
@@ -205,9 +205,6 @@ public class ModelManager{
         rating.value = NSDecimalNumber(decimal: ratingValue)
         rating.date = NSDate()
         
-        for person in target.persons!.array as! [PersonCard]{
-            person.addToRatings(rating)
-        }
         _ratings.append(rating)
         do{
             try context.save()

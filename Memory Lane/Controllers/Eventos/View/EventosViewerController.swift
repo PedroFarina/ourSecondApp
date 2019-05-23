@@ -35,9 +35,6 @@ class EventosViewerController:UIViewController{
         }
     }
     
-    override func viewDidLoad() {
-    }
-    
     override func viewWillAppear(_ animated: Bool){
         df.dateFormat = "dd-MM-yy hh:mm"
         navigationItem.title = eventoAtual.name
@@ -50,5 +47,4 @@ class EventosViewerController:UIViewController{
             }
         }
     }
-
 }
