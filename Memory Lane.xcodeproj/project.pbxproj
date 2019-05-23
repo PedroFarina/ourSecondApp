@@ -181,9 +181,9 @@
 		02B677762285ED1E00512255 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				F20F6F642294950D0055BBD7 /* DoughnutChartView.swift */,
 				02F92448228F12D10037CFB3 /* LineChartView.swift */,
 				0297AC0422849E6200BA98B6 /* Singleton.swift */,
-				F20F6F642294950D0055BBD7 /* DoughnutChartView.swift */,
 				02B677772285EDA500512255 /* ArrayNotifier.swift */,
 				02B6777C2286177E00512255 /* ModelStatus.swift */,
 				02B6777E22861BDE00512255 /* DataModifiedDelegate.swift */,

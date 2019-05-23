@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ConexoesCreatorController: ViewController, UITextFieldDelegate{
+class ConexoesCreatorController: UIViewController, UITextFieldDelegate{
     var connectionAtual:PersonCard?
     private var imgChanged:Bool = false
     private var rating:Int = 3

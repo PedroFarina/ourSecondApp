@@ -152,3 +152,4 @@ class LineChartView:UIView{
         return self.graphPoints.reduce(0, +) / self.graphPoints.count
     } 
 }
+

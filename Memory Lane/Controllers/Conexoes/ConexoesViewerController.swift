@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ConexoesViewerController : ViewController{
+class ConexoesViewerController : UIViewController{
     var connectionAtual:PersonCard?
     
     
@@ -18,7 +18,7 @@ class ConexoesViewerController : ViewController{
     
     @IBOutlet var lbls: [UILabel]!
     
-    @IBOutlet weak var lineGraphView: LineGraphView!
+    @IBOutlet weak var lineGraphView: LineChartView!
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = .white
