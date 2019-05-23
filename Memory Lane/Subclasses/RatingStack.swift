@@ -9,11 +9,26 @@
 import Foundation
 import UIKit
 
+protocol RatingSetDelegate{
+    func RatingDidSet()
+}
+
 @IBDesignable class RatingStack : UIStackView {
     @IBOutlet var RatingBalls:[RatingBall]!
+    private var delegate:RatingSetDelegate?
     
+    public func setDelegate(delegate:RatingSetDelegate){
+        self.delegate = delegate
+    }
     
-    private var _value:Float = 3
+    public func resetValue(){
+        _value = 0
+        for ball in RatingBalls{
+            ball.value = 0
+        }
+    }
+    
+    private var _value:Float = 0
     var value:Float{
         get{
             return _value
@@ -31,6 +46,7 @@ import UIKit
                     v = 0
                 }
             }
+            delegate?.RatingDidSet()
         }
     }
     
