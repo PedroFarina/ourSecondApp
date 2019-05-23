@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class EventosCreatorController : ViewController{
+class EventosCreatorController : UIViewController{
     @IBOutlet var imgEvento: UIImageView!
     var imgChanged:Bool = false
     var eventoAtual:EventCard?

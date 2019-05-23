@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UIViewController.swift
 //  Companion
 //
 //  Created by Pedro Giuliano Farina on 08/05/19.
@@ -9,9 +9,79 @@
 import UIKit
 import CoreData
 
-class ViewController :UIViewController{
+class RatingsChartViewController: UIViewController, DataModifiedDelegate{
+    
+    private var dados:[PersonCard] = []
+    
+    @IBOutlet weak var ratingsChart: DoughnutChartView!
+    @IBOutlet weak var colorsStackView: UIStackView!
+    @IBOutlet weak var ratingsLabelsStackView: UIStackView!
+    @IBOutlet weak var numberOfRatingsStackView: UIStackView!
+    
+    
+    
+    
+    //Internal Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ModelManager.shared().addDelegate(newDelegate: self)
+        DataModified()
+        setupChart()
+    }
+    
+    public func DataModified() {
+        getData()
+        updateChart()
+    }
+    
+    private func getData(){
+        dados = ModelManager.shared().connections
+    }
+    
+    public func updateChart(){
+        
+    }
+    
+    public func setupChart(){
+        ratingsChart.chartColors = [
+            //AC366D - %100
+            UIColor(red: 172/255,
+                    green: 54/255,
+                    blue: 109/255,
+                    alpha: 1.0),
+            //AC366D - %71
+            UIColor(red: 172/255,
+                    green: 54/255,
+                    blue: 109/255,
+                    alpha: 0.71),
+            //AC366D - %35
+            UIColor(red: 172/255,
+                    green: 54/255,
+                    blue: 109/255,
+                    alpha: 0.35),
+            //918088 - %47
+            UIColor(red: 145/255,
+                    green: 128/255,
+                    blue: 136/255,
+                    alpha: 0.47),
+            //3E3238 - %47
+            UIColor(red: 151/255,
+                    green: 151/255,
+                    blue: 151/255,
+                    alpha: 0.47)]
+        ratingsChart.arcWidth = min(ratingsChart.frame.height, ratingsChart.frame.width)/5
+        updateChart()
+    }
+    
+    private func getRatingsValues() -> [Int]{
+        let ratingsValues:[Int] = []
+        
+        return ratingsValues
+    }
+    
 }
 
+/*
 class MainViewController: UIViewController, DataModifiedDelegate {
     
     
@@ -87,7 +157,6 @@ class MainViewController: UIViewController, DataModifiedDelegate {
             mood = historyGraph.backgroundColor ?? UIColor.white
         }
         historyGraph.LineColor = mood
-//        historyGraph.endColor = historyGraph.startColor
         for i in 0...4 {
             if let image = emojiLabelStack.arrangedSubviews[4 - i] as? UIImageView {
                 image.image = UIImage(named: GeneralProperties.ratingPathImages[i] + GeneralProperties.highlightedSufix)
@@ -108,3 +177,4 @@ class MainViewController: UIViewController, DataModifiedDelegate {
     }
 
 }
+*/
