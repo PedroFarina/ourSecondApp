@@ -55,7 +55,9 @@ class RatingController : UIViewController, RatingSetDelegate{
         let rating = Decimal(Double(ratingStack.value))
         if let pessoa = pessoa{
             let _ = ModelManager.shared().rateConnection(target: pessoa, rating: rating, inEvent: evento)
-            atualizarInfos()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: {
+                self.atualizarInfos()
+            })
         }
         else{
             fatalError()

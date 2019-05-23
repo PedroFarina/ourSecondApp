@@ -129,6 +129,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZG-Cb-ISZ">
                                 <rect key="frame" x="113" y="382" width="189" height="44"/>
                                 <state key="normal" image="btnPersons"/>
+                                <connections>
+                                    <segue destination="C65-yc-7AM" kind="presentation" id="UMe-5d-Oct"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Z7-uc-VOE" customClass="RatingStack" customModule="Memory_Lane" customModuleProvider="target">
                                 <rect key="frame" x="128" y="344" width="158" height="28"/>
@@ -624,7 +627,7 @@
         <image name="eventPlaceHolder" width="414" height="164"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TgD-zz-5zE"/>
+        <segue reference="r9R-sR-Z4Z"/>
         <segue reference="kze-p9-Z1e"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.50196078431372548" green="0.22745098039215686" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
