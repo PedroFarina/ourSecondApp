@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//@IBDesignable
+@IBDesignable
 class DoughnutChartView: UIView {
     
     public var chartValues:[Int] = []{
@@ -30,7 +30,7 @@ class DoughnutChartView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        if chartValues.isEmpty{
+        if chartValues.isEmpty || chartValuesTotal == 0{
             chartValues = [100]
         }
         //Random Color generation if not enough colors for graph
@@ -72,7 +72,7 @@ class DoughnutChartView: UIView {
                                     endAngle: endAngle,
                                     clockwise: true)
             path.lineWidth = arcWidth
-            colorsSorted[colorsSorted.count - i - 1].setStroke()
+            colorsSorted[i].setStroke()
             path.stroke()
             startAngle = endAngle
         }
@@ -80,24 +80,32 @@ class DoughnutChartView: UIView {
 }
 
 @IBDesignable class ChartLabelView:UIView{
-    @IBInspectable var color:UIColor = UIColor.gray
+    @IBInspectable var colour:UIColor = UIColor.gray{
+        didSet{
+            self.setNeedsDisplay()
+        }
+    }
     override func draw(_ rect: CGRect) {
         let center = CGPoint(
             x: bounds.width / 2,
             y: bounds.height / 2)
         let radius = min(bounds.width, bounds.height)
-        var path = UIBezierPath(arcCenter: center,
+        let path = UIBezierPath(arcCenter: center,
                                     radius: radius/2 - 2,
                                     startAngle: CGFloat.zero,
                                     endAngle: 2 * CGFloat.pi,
                                     clockwise: false)
-        color.setFill()
+        colour.setFill()
         path.fill()
     }
 }
 
 @IBDesignable class DisclosureIndicatorView:UIView{
-    @IBInspectable var color:UIColor = UIColor.gray
+    @IBInspectable var colour:UIColor = UIColor.gray{
+        didSet{
+            self.setNeedsDisplay()
+        }
+    }
     override func draw(_ rect: CGRect) {
         self.backgroundColor = UIColor.clear
         let center = CGPoint(
@@ -114,7 +122,7 @@ class DoughnutChartView: UIView {
             context.setLineWidth(2)
             path.addLines(between: [center, CGPoint(x: center.x - bounds.width/3, y: center.y + bounds.height/5)])
             path.addLines(between: [center, CGPoint(x: center.x - bounds.width/3, y: center.y - bounds.height/5)])
-            color.setStroke()
+            colour.setStroke()
             context.addPath(path)
             context.strokePath()
             
