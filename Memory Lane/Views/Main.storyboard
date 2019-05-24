@@ -53,53 +53,10 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2G-6W-bc4" userLabel="Visualisar Histórico">
-                                                        <rect key="frame" x="234" y="20" width="150" height="30"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gpb-Wa-JnZ" userLabel="Disclosure Identifier" customClass="DisclosureIndicatorView" customModule="Memory_Lane" customModuleProvider="target">
-                                                                <rect key="frame" x="131.5" y="0.0" width="18.5" height="30"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="colour">
-                                                                        <color key="value" red="0.53883141280000002" green="0.1725262105" blue="0.34151220319999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visualizar Histórico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbQ-b1-9Bn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="131.5" height="30"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                <color key="textColor" red="0.84933680300000003" green="0.32741093640000002" blue="0.46667045350000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1W4-AZ-8UC" userLabel="btnPerson">
-                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
-                                                                <connections>
-                                                                    <segue destination="blu-bE-lnm" kind="show" id="2UI-Xm-SSt"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="Gpb-Wa-JnZ" secondAttribute="bottom" id="3fW-XX-GLG"/>
-                                                            <constraint firstItem="Gpb-Wa-JnZ" firstAttribute="leading" secondItem="sbQ-b1-9Bn" secondAttribute="trailing" id="KK4-cg-2f3"/>
-                                                            <constraint firstItem="sbQ-b1-9Bn" firstAttribute="top" secondItem="o2G-6W-bc4" secondAttribute="top" id="ONt-36-yti"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Gpb-Wa-JnZ" secondAttribute="trailing" id="S0Q-q7-lo2"/>
-                                                            <constraint firstAttribute="width" constant="150" id="S1A-IX-hl2"/>
-                                                            <constraint firstItem="sbQ-b1-9Bn" firstAttribute="leading" secondItem="o2G-6W-bc4" secondAttribute="leading" id="YH1-4g-w9Y"/>
-                                                            <constraint firstItem="1W4-AZ-8UC" firstAttribute="top" secondItem="o2G-6W-bc4" secondAttribute="top" id="fgU-8D-awM"/>
-                                                            <constraint firstAttribute="trailing" secondItem="1W4-AZ-8UC" secondAttribute="trailing" id="iAV-N5-nrb"/>
-                                                            <constraint firstAttribute="bottom" secondItem="1W4-AZ-8UC" secondAttribute="bottom" id="kmy-PH-WEL"/>
-                                                            <constraint firstAttribute="bottom" secondItem="sbQ-b1-9Bn" secondAttribute="bottom" id="oZy-9d-2Dl"/>
-                                                            <constraint firstItem="1W4-AZ-8UC" firstAttribute="leading" secondItem="o2G-6W-bc4" secondAttribute="leading" id="t1R-RR-zKd"/>
-                                                            <constraint firstItem="Gpb-Wa-JnZ" firstAttribute="top" secondItem="o2G-6W-bc4" secondAttribute="top" id="zXZ-z6-gDd"/>
-                                                        </constraints>
-                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="o2G-6W-bc4" firstAttribute="centerY" secondItem="lZi-8c-YP1" secondAttribute="centerY" id="DMO-Vc-vMR"/>
                                                     <constraint firstItem="9UU-Mo-VRh" firstAttribute="top" secondItem="lZi-8c-YP1" secondAttribute="top" id="gfz-QC-9Ni"/>
-                                                    <constraint firstAttribute="trailing" secondItem="o2G-6W-bc4" secondAttribute="trailing" id="hf0-C0-O2s"/>
                                                     <constraint firstAttribute="bottom" secondItem="9UU-Mo-VRh" secondAttribute="bottom" id="wXO-me-J6t"/>
                                                     <constraint firstItem="9UU-Mo-VRh" firstAttribute="leading" secondItem="lZi-8c-YP1" secondAttribute="leading" id="yw5-rm-6xY"/>
                                                 </constraints>
@@ -622,51 +579,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="459-1X-Qrg" userLabel="Visualisar Histórico">
-                                                <rect key="frame" x="234" y="20" width="150" height="30"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epi-H0-ouh" userLabel="Disclosure Identifier" customClass="DisclosureIndicatorView" customModule="Memory_Lane" customModuleProvider="target">
-                                                        <rect key="frame" x="131.5" y="0.0" width="18.5" height="30"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="colour">
-                                                                <color key="value" red="0.53883141280000002" green="0.1725262105" blue="0.34151220319999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visualizar Histórico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZb-eO-MmM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" red="0.84933680300000003" green="0.32741093640000002" blue="0.46667045350000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqn-f2-yiG" userLabel="btnEventos">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="Uqn-f2-yiG" firstAttribute="leading" secondItem="459-1X-Qrg" secondAttribute="leading" id="O0U-3S-39v"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Uqn-f2-yiG" secondAttribute="bottom" id="OFn-GH-G3n"/>
-                                                    <constraint firstAttribute="trailing" secondItem="epi-H0-ouh" secondAttribute="trailing" id="R2N-rE-ysq"/>
-                                                    <constraint firstAttribute="bottom" secondItem="epi-H0-ouh" secondAttribute="bottom" id="TqM-G5-wyp"/>
-                                                    <constraint firstAttribute="width" constant="150" id="V0d-QY-mNT"/>
-                                                    <constraint firstItem="epi-H0-ouh" firstAttribute="top" secondItem="459-1X-Qrg" secondAttribute="top" id="Wpj-Rl-NRJ"/>
-                                                    <constraint firstAttribute="bottom" secondItem="qZb-eO-MmM" secondAttribute="bottom" id="Z1f-y8-ncP"/>
-                                                    <constraint firstItem="qZb-eO-MmM" firstAttribute="top" secondItem="459-1X-Qrg" secondAttribute="top" id="eMl-Db-mpX"/>
-                                                    <constraint firstItem="qZb-eO-MmM" firstAttribute="leading" secondItem="459-1X-Qrg" secondAttribute="leading" id="jUD-ZY-C04"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Uqn-f2-yiG" secondAttribute="trailing" id="q0L-vH-fpQ"/>
-                                                    <constraint firstItem="epi-H0-ouh" firstAttribute="leading" secondItem="qZb-eO-MmM" secondAttribute="trailing" id="rmg-nb-X2F"/>
-                                                    <constraint firstItem="Uqn-f2-yiG" firstAttribute="top" secondItem="459-1X-Qrg" secondAttribute="top" id="ySZ-hL-mSj"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ipu-pz-T6G" firstAttribute="top" secondItem="o4G-vH-g3O" secondAttribute="top" id="NrW-89-iRW"/>
                                             <constraint firstItem="ipu-pz-T6G" firstAttribute="leading" secondItem="o4G-vH-g3O" secondAttribute="leading" id="Nvl-eT-bWV"/>
-                                            <constraint firstAttribute="trailing" secondItem="459-1X-Qrg" secondAttribute="trailing" id="Zzl-x1-chh"/>
-                                            <constraint firstItem="459-1X-Qrg" firstAttribute="centerY" secondItem="o4G-vH-g3O" secondAttribute="centerY" id="fPu-iS-oph"/>
                                             <constraint firstAttribute="bottom" secondItem="ipu-pz-T6G" secondAttribute="bottom" id="h8i-jZ-dKU"/>
                                         </constraints>
                                     </view>
@@ -1107,6 +1024,7 @@
         <!--Historico Persons Table View Controller-->
         <scene sceneID="ZPy-C2-4ld">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBa-z6-Uks" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="blu-bE-lnm" customClass="HistoricoPersonsTableViewController" customModule="Memory_Lane" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FjB-ZL-HCD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1141,7 +1059,6 @@
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sBa-z6-Uks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1469.5652173913045" y="-62.276785714285708"/>
         </scene>

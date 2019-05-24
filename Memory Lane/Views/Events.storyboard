@@ -222,11 +222,6 @@
                                 <constraints>
                                     <constraint firstItem="Gt4-9n-VMk" firstAttribute="leading" secondItem="9Z7-uc-VOE" secondAttribute="leading" id="D2T-BI-kwP"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outletCollection property="RatingBalls" destination="Gt4-9n-VMk" collectionClass="NSMutableArray" id="sZO-Zz-KZh"/>
                                     <outletCollection property="RatingBalls" destination="wO0-jE-70x" collectionClass="NSMutableArray" id="SyE-Sr-Zpi"/>
@@ -653,11 +648,6 @@
                                                             <constraints>
                                                                 <constraint firstItem="LDR-zL-P7b" firstAttribute="leading" secondItem="nAF-Tu-6gM" secondAttribute="leading" id="z9D-oa-2Nh"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outletCollection property="RatingBalls" destination="LDR-zL-P7b" collectionClass="NSMutableArray" id="8N8-xD-I5V"/>
                                                                 <outletCollection property="RatingBalls" destination="bvq-TH-tEe" collectionClass="NSMutableArray" id="I8O-bY-x9b"/>

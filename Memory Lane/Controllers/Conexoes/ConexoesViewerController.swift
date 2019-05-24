@@ -47,7 +47,8 @@ class ConexoesViewerController : UIViewController{
         for i in connectionAtual?.ratings?.array as! [Rating]{
             notas.append(i.value?.intValue ?? 0)
         }
-        lineGraphView.update(points: notas)
+        let pontos:[Int] = notas.count > 7 ? Array(notas[notas.count - 8...notas.count - 1]) : notas
+        lineGraphView.update(points: pontos)
         
         if let connectionAtual = connectionAtual{
             lblNome.text = connectionAtual.name
