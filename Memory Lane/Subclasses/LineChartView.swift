@@ -14,9 +14,9 @@ class LineChartView:UIView{
     @IBInspectable var startColor: UIColor = .red
     @IBInspectable var endColor: UIColor = .green
     @IBInspectable var LineColor: UIColor = .white
-    public var margem:CGFloat = 20.0
-    public var topB: CGFloat = 60
-    public var botB: CGFloat = 50
+    public var margem:CGFloat = 10
+    public var topB: CGFloat = 10
+    public var botB: CGFloat = 10
     
     public var graphPoints:[Int] = [1, 2, 3, 4, 5]
     

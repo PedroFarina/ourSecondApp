@@ -124,11 +124,6 @@
                                                             <constraints>
                                                                 <constraint firstItem="GNx-Aq-ZOd" firstAttribute="leading" secondItem="VNY-ji-aLn" secondAttribute="leading" id="b48-jk-h7u"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outletCollection property="RatingBalls" destination="GNx-Aq-ZOd" collectionClass="NSMutableArray" id="jL2-rz-XQR"/>
                                                                 <outletCollection property="RatingBalls" destination="mG8-KU-5qX" collectionClass="NSMutableArray" id="SSc-LG-c3S"/>
@@ -212,13 +207,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsM-ny-MuL" userLabel="lblName">
-                                <rect key="frame" x="20" y="236" width="51" height="21"/>
+                                <rect key="frame" x="20" y="236" width="50.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WSs-Mx-KuL">
-                                <rect key="frame" x="20" y="255.5" width="414" height="30"/>
+                                <rect key="frame" x="20" y="255" width="414" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
@@ -236,97 +231,145 @@
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primeira impressão:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64c-2B-TaJ" userLabel="lblRating">
-                                <rect key="frame" x="20" y="322.5" width="151" height="21"/>
+                                <rect key="frame" x="20" y="322" width="151" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating01" highlightedImage="rating01Highlighted" translatesAutoresizingMaskIntoConstraints="NO" id="qbQ-Ck-9wf" userLabel="imgRating01">
-                                <rect key="frame" x="20" y="351.5" width="69" height="69"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXm-NB-0xn">
+                                <rect key="frame" x="20" y="342.5" width="374" height="128"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XYB-fW-MQF" customClass="RatingStack" customModule="Memory_Lane" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9W7-gf-9dS" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="71" height="128"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTF-JX-8wi" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="76" y="0.0" width="70.5" height="128"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="-0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiP-uE-Tmc" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="151.5" y="0.0" width="71" height="128"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ezs-6s-66X" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="227.5" y="0.0" width="70.5" height="128"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-ki-vGY" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                <rect key="frame" x="303" y="0.0" width="71" height="128"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="9W7-gf-9dS" firstAttribute="leading" secondItem="XYB-fW-MQF" secondAttribute="leading" id="x0w-5y-F8f"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="RatingBalls" destination="9W7-gf-9dS" collectionClass="NSMutableArray" id="f68-Va-Czq"/>
+                                            <outletCollection property="RatingBalls" destination="JTF-JX-8wi" collectionClass="NSMutableArray" id="ruC-Up-zgQ"/>
+                                            <outletCollection property="RatingBalls" destination="BiP-uE-Tmc" collectionClass="NSMutableArray" id="VmP-N6-6jG"/>
+                                            <outletCollection property="RatingBalls" destination="Ezs-6s-66X" collectionClass="NSMutableArray" id="hQI-hN-rjO"/>
+                                            <outletCollection property="RatingBalls" destination="4wH-ki-vGY" collectionClass="NSMutableArray" id="Q2h-ug-Mbe"/>
+                                        </connections>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="qbQ-Ck-9wf" secondAttribute="height" multiplier="1:1" id="QjW-v8-7G7"/>
+                                    <constraint firstItem="XYB-fW-MQF" firstAttribute="centerX" secondItem="VXm-NB-0xn" secondAttribute="centerX" id="2gJ-kR-NZe"/>
+                                    <constraint firstItem="XYB-fW-MQF" firstAttribute="width" secondItem="VXm-NB-0xn" secondAttribute="width" id="9Y5-B3-Pci"/>
+                                    <constraint firstItem="XYB-fW-MQF" firstAttribute="height" secondItem="VXm-NB-0xn" secondAttribute="height" id="eku-SL-ymw"/>
+                                    <constraint firstItem="XYB-fW-MQF" firstAttribute="centerY" secondItem="VXm-NB-0xn" secondAttribute="centerY" id="lko-3N-PX5"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="u8B-20-8er" appends="YES" id="qkc-vL-ASN"/>
-                                </connections>
-                            </imageView>
-                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating02" highlightedImage="rating02Highlighted" translatesAutoresizingMaskIntoConstraints="NO" id="ECI-Tr-dBC" userLabel="imgRating02">
-                                <rect key="frame" x="96.5" y="351.5" width="68.5" height="69"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="zLQ-wn-2qQ" appends="YES" id="4FY-Pm-sK5"/>
-                                </connections>
-                            </imageView>
-                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating03" highlightedImage="rating03Highlighted" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kIX-kv-IWk" userLabel="imgRating03">
-                                <rect key="frame" x="172.5" y="351.5" width="69" height="69"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="k6m-sI-fFw" appends="YES" id="IgN-J0-Idd"/>
-                                </connections>
-                            </imageView>
-                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating04" highlightedImage="rating04Highlighted" translatesAutoresizingMaskIntoConstraints="NO" id="e8P-Uz-WqE" userLabel="imgRating04">
-                                <rect key="frame" x="249" y="351.5" width="69" height="69"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Cre-g1-hwa" appends="YES" id="ZaT-0a-Wa6"/>
-                                </connections>
-                            </imageView>
-                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating05" highlightedImage="rating05Highlighted" translatesAutoresizingMaskIntoConstraints="NO" id="63D-02-qca" userLabel="imgRating05">
-                                <rect key="frame" x="325.5" y="351.5" width="68.5" height="69"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="hmw-ae-BGy" appends="YES" id="hzw-2H-gaZ"/>
-                                </connections>
-                            </imageView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="63D-02-qca" firstAttribute="leading" secondItem="e8P-Uz-WqE" secondAttribute="trailing" constant="7.5" id="0i3-Mr-p4P"/>
-                            <constraint firstItem="kIX-kv-IWk" firstAttribute="height" secondItem="ECI-Tr-dBC" secondAttribute="height" id="0qP-W3-9YT"/>
                             <constraint firstItem="TCu-P5-cM3" firstAttribute="centerX" secondItem="1Lq-rl-szd" secondAttribute="centerX" id="0sY-ky-JVd"/>
-                            <constraint firstItem="63D-02-qca" firstAttribute="height" secondItem="e8P-Uz-WqE" secondAttribute="height" id="4nT-3c-rVh"/>
-                            <constraint firstItem="qbQ-Ck-9wf" firstAttribute="width" secondItem="1Lq-rl-szd" secondAttribute="width" multiplier="0.11" id="6kk-GL-eJa"/>
                             <constraint firstItem="WSs-Mx-KuL" firstAttribute="leading" secondItem="1Lq-rl-szd" secondAttribute="leading" constant="20" id="6wd-wI-Cbn"/>
-                            <constraint firstItem="e8P-Uz-WqE" firstAttribute="leading" secondItem="kIX-kv-IWk" secondAttribute="trailing" constant="7.5" id="7e3-8O-Txx"/>
-                            <constraint firstItem="e8P-Uz-WqE" firstAttribute="height" secondItem="kIX-kv-IWk" secondAttribute="height" id="9Am-DM-d1T"/>
-                            <constraint firstItem="63D-02-qca" firstAttribute="centerY" secondItem="e8P-Uz-WqE" secondAttribute="centerY" id="CgZ-dA-n4y"/>
-                            <constraint firstItem="kIX-kv-IWk" firstAttribute="width" secondItem="ECI-Tr-dBC" secondAttribute="width" id="GXf-mI-PGl"/>
+                            <constraint firstItem="VXm-NB-0xn" firstAttribute="leading" secondItem="1Lq-rl-szd" secondAttribute="leading" constant="20" id="DCB-pr-SDJ"/>
+                            <constraint firstItem="VXm-NB-0xn" firstAttribute="height" secondItem="TCu-P5-cM3" secondAttribute="height" id="KdN-Is-Hyd"/>
                             <constraint firstItem="64c-2B-TaJ" firstAttribute="firstBaseline" secondItem="WSs-Mx-KuL" secondAttribute="baseline" multiplier="3" constant="24.5" symbolType="layoutAnchor" id="Mwf-fu-VAA"/>
-                            <constraint firstItem="kIX-kv-IWk" firstAttribute="centerY" secondItem="ECI-Tr-dBC" secondAttribute="centerY" id="PYo-ty-oGT"/>
-                            <constraint firstItem="ECI-Tr-dBC" firstAttribute="leading" secondItem="qbQ-Ck-9wf" secondAttribute="trailing" constant="7.5" id="PyF-fb-Qph"/>
-                            <constraint firstItem="kIX-kv-IWk" firstAttribute="centerX" secondItem="1Lq-rl-szd" secondAttribute="centerX" id="VUM-fE-KmJ"/>
                             <constraint firstItem="WSs-Mx-KuL" firstAttribute="width" secondItem="1Lq-rl-szd" secondAttribute="width" id="Vky-vj-hYG"/>
-                            <constraint firstItem="63D-02-qca" firstAttribute="width" secondItem="e8P-Uz-WqE" secondAttribute="width" id="YzV-Gm-iaS"/>
-                            <constraint firstItem="qbQ-Ck-9wf" firstAttribute="leading" secondItem="1Lq-rl-szd" secondAttribute="leading" constant="20" id="dhK-bl-0Y3"/>
                             <constraint firstItem="TCu-P5-cM3" firstAttribute="top" secondItem="1Lq-rl-szd" secondAttribute="top" constant="15" id="eHW-Jh-NKY"/>
-                            <constraint firstItem="kIX-kv-IWk" firstAttribute="leading" secondItem="ECI-Tr-dBC" secondAttribute="trailing" constant="7.5" id="eoX-EJ-pPe"/>
-                            <constraint firstItem="ECI-Tr-dBC" firstAttribute="centerY" secondItem="qbQ-Ck-9wf" secondAttribute="centerY" id="hRy-pm-JBv"/>
                             <constraint firstItem="TCu-P5-cM3" firstAttribute="height" secondItem="1Lq-rl-szd" secondAttribute="height" multiplier="0.35" id="icz-0k-tpy"/>
                             <constraint firstItem="64c-2B-TaJ" firstAttribute="leading" secondItem="1Lq-rl-szd" secondAttribute="leading" constant="20" id="isJ-GI-1Sr"/>
-                            <constraint firstItem="ECI-Tr-dBC" firstAttribute="width" secondItem="qbQ-Ck-9wf" secondAttribute="width" id="lvJ-Wc-gHe"/>
-                            <constraint firstItem="e8P-Uz-WqE" firstAttribute="width" secondItem="kIX-kv-IWk" secondAttribute="width" id="mJk-qN-Lra"/>
-                            <constraint firstItem="e8P-Uz-WqE" firstAttribute="centerY" secondItem="kIX-kv-IWk" secondAttribute="centerY" id="oPv-D9-mNA"/>
+                            <constraint firstItem="VXm-NB-0xn" firstAttribute="top" secondItem="64c-2B-TaJ" secondAttribute="bottom" id="jdz-eo-zzW"/>
+                            <constraint firstItem="1Lq-rl-szd" firstAttribute="trailing" secondItem="VXm-NB-0xn" secondAttribute="trailing" constant="20" id="lAS-wo-gdy"/>
                             <constraint firstItem="NsM-ny-MuL" firstAttribute="leading" secondItem="1Lq-rl-szd" secondAttribute="leading" constant="20" id="sJ8-od-RRW"/>
-                            <constraint firstItem="qbQ-Ck-9wf" firstAttribute="width" secondItem="1Lq-rl-szd" secondAttribute="width" multiplier="0.16625" id="v1i-ec-XS2"/>
                             <constraint firstItem="WSs-Mx-KuL" firstAttribute="firstBaseline" secondItem="NsM-ny-MuL" secondAttribute="baseline" multiplier="1.01" constant="20" symbolType="layoutAnchor" id="wfi-Iz-ShG"/>
                             <constraint firstItem="NsM-ny-MuL" firstAttribute="top" secondItem="TCu-P5-cM3" secondAttribute="bottom" constant="5" id="wfw-ku-bSB"/>
                             <constraint firstItem="TCu-P5-cM3" firstAttribute="width" secondItem="1Lq-rl-szd" secondAttribute="width" multiplier="0.309" id="xFF-HJ-Son"/>
-                            <constraint firstItem="qbQ-Ck-9wf" firstAttribute="firstBaseline" secondItem="64c-2B-TaJ" secondAttribute="baseline" constant="12.5" symbolType="layoutAnchor" id="xaC-uC-mAv"/>
-                            <constraint firstItem="ECI-Tr-dBC" firstAttribute="height" secondItem="qbQ-Ck-9wf" secondAttribute="height" id="yl9-Ed-rJj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Lq-rl-szd"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="icz-0k-tpy"/>
-                                <exclude reference="6kk-GL-eJa"/>
-                                <exclude reference="VUM-fE-KmJ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
                                 <include reference="icz-0k-tpy"/>
                                 <exclude reference="xFF-HJ-Son"/>
-                                <include reference="6kk-GL-eJa"/>
-                                <exclude reference="dhK-bl-0Y3"/>
-                                <exclude reference="v1i-ec-XS2"/>
-                                <include reference="VUM-fE-KmJ"/>
                             </mask>
                         </variation>
                     </view>
@@ -346,41 +389,11 @@
                     <connections>
                         <outlet property="btnDone" destination="TBH-RS-kas" id="WLx-uT-OsL"/>
                         <outlet property="imgConnection" destination="TCu-P5-cM3" id="Jnw-wg-qh5"/>
-                        <outlet property="lastImage" destination="kIX-kv-IWk" id="SYE-I4-BvH"/>
+                        <outlet property="ratingStack" destination="XYB-fW-MQF" id="Mpe-qh-LQg"/>
                         <outlet property="txtName" destination="WSs-Mx-KuL" id="ob9-Ub-Bns"/>
-                        <outletCollection property="imagesView" destination="qbQ-Ck-9wf" collectionClass="NSMutableArray" id="gsc-aj-3iw"/>
-                        <outletCollection property="imagesView" destination="ECI-Tr-dBC" collectionClass="NSMutableArray" id="ohO-XJ-1Zm"/>
-                        <outletCollection property="imagesView" destination="kIX-kv-IWk" collectionClass="NSMutableArray" id="5Lr-mJ-BKl"/>
-                        <outletCollection property="imagesView" destination="e8P-Uz-WqE" collectionClass="NSMutableArray" id="SeR-x6-0ZE"/>
-                        <outletCollection property="imagesView" destination="63D-02-qca" collectionClass="NSMutableArray" id="2yv-Cp-fI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQM-to-oFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="u8B-20-8er" userLabel="tapRecognizerRating01">
-                    <connections>
-                        <action selector="tapOccur:" destination="tVO-iA-5Ms" id="uwy-1d-uaV"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="zLQ-wn-2qQ" userLabel="tapRecognizerRating02">
-                    <connections>
-                        <action selector="tapOccur:" destination="tVO-iA-5Ms" id="r3P-Uh-Sof"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="k6m-sI-fFw" userLabel="tapRecognizerRating03">
-                    <connections>
-                        <action selector="tapOccur:" destination="tVO-iA-5Ms" id="UdF-A4-cVY"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="Cre-g1-hwa" userLabel="tapRecognizerRating04">
-                    <connections>
-                        <action selector="tapOccur:" destination="tVO-iA-5Ms" id="1fT-BV-cjv"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="hmw-ae-BGy" userLabel="tapRecognizerRating05">
-                    <connections>
-                        <action selector="tapOccur:" destination="tVO-iA-5Ms" id="OrS-Wg-q3v"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer id="bbn-nk-xVT" userLabel="tapRecognizerConnectionImage">
                     <connections>
                         <action selector="tapOccur:" destination="tVO-iA-5Ms" id="9u6-nW-RNN"/>
@@ -658,11 +671,6 @@
                                                                 <constraint firstItem="368-o5-cKq" firstAttribute="leading" secondItem="9Vg-ld-eCt" secondAttribute="leading" id="shi-Gf-YCL"/>
                                                             </constraints>
                                                             <viewLayoutGuide key="safeArea" id="FeD-HR-hzQ"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outletCollection property="RatingBalls" destination="368-o5-cKq" collectionClass="NSMutableArray" id="QvK-xG-mER"/>
                                                                 <outletCollection property="RatingBalls" destination="pSL-JT-7h5" collectionClass="NSMutableArray" id="rtQ-nL-0Vj"/>
@@ -723,19 +731,9 @@
         <image name="friendIcon" width="26.5" height="25.5"/>
         <image name="friendIcon2" width="30" height="26.5"/>
         <image name="personPlaceHolder" width="144" height="144"/>
-        <image name="rating01" width="165.5" height="165.5"/>
-        <image name="rating01Highlighted" width="165.5" height="165.5"/>
-        <image name="rating02" width="165.5" height="166"/>
-        <image name="rating02Highlighted" width="165.5" height="165.5"/>
-        <image name="rating03" width="165.5" height="165.5"/>
-        <image name="rating03Highlighted" width="166" height="165.5"/>
-        <image name="rating04" width="165.5" height="165.5"/>
-        <image name="rating04Highlighted" width="165.5" height="165.5"/>
-        <image name="rating05" width="165.5" height="165.5"/>
-        <image name="rating05Highlighted" width="165.5" height="165.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zVG-tp-HaU"/>
+        <segue reference="rqY-2g-O4W"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.50196078431372548" green="0.22745098039215686" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

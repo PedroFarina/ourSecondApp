@@ -117,11 +117,6 @@
                                         <constraints>
                                             <constraint firstItem="6aI-Ec-Ncb" firstAttribute="leading" secondItem="hsc-nB-vVp" secondAttribute="leading" id="keA-4h-AqJ"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outletCollection property="RatingBalls" destination="6aI-Ec-Ncb" collectionClass="NSMutableArray" id="waI-Pj-yng"/>
                                             <outletCollection property="RatingBalls" destination="pyJ-6E-4I3" collectionClass="NSMutableArray" id="HyD-cc-Ayx"/>
