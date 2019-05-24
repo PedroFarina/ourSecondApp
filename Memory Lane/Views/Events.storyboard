@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -69,7 +69,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cma-AH-bbI"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Eventos" id="mgW-VQ-qV5">
+                    <navigationItem key="navigationItem" title="Eventos" largeTitleDisplayMode="always" id="mgW-VQ-qV5">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="edit" id="DNY-yv-5u0">
                             <color key="tintColor" red="0.50196078430000002" green="0.2274509804" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
@@ -261,7 +261,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FP2-f3-PLd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VW2-Kt-swB">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="VW2-Kt-swB">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="kq4-54-1Vt">
                             <color key="tintColor" red="0.50196078430000002" green="0.2274509804" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -273,6 +273,7 @@
                         <outlet property="imgEvento" destination="QGw-R5-b9e" id="tQc-lW-CwZ"/>
                         <outlet property="lblDate" destination="7uc-dJ-JAw" id="Zqa-Aa-71K"/>
                         <outlet property="lblNome" destination="nXf-Y6-8QS" id="QUQ-CN-jwi"/>
+                        <outlet property="ratingStack" destination="9Z7-uc-VOE" id="Sai-Ik-UHi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUP-SC-YZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -303,7 +304,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-VD-6eY">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-VD-6eY">
                                             <rect key="frame" x="10" y="10" width="129.5" height="129.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="XLi-VD-6eY" secondAttribute="height" multiplier="1:1" id="5zg-Y3-mTY"/>
@@ -338,30 +339,6 @@
                                     <outlet property="lblDate" destination="FWs-kg-P3a" id="TVB-vE-spC"/>
                                     <outlet property="lblName" destination="sOK-pV-9DH" id="4B4-y2-zbf"/>
                                 </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noPhotoCell" textLabel="FHN-Md-tf5" detailTextLabel="evj-rt-7Io" rowHeight="65" style="IBUITableViewCellStyleValue1" id="mk8-Jt-1my">
-                                <rect key="frame" x="0.0" y="178" width="374" height="65"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mk8-Jt-1my" id="b5J-fa-Xfx">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="64.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FHN-Md-tf5">
-                                            <rect key="frame" x="20" y="22" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="evj-rt-7Io">
-                                            <rect key="frame" x="310" y="22" width="44" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -567,22 +544,166 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="aCell" textLabel="epf-U2-Aff" style="IBUITableViewCellStyleDefault" id="VWu-1h-KHf" customClass="ConnectionTableViewCell" customModule="Memory_Lane" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="aCell" rowHeight="85" id="VWu-1h-KHf" customClass="ConnectionTableViewCell" customModule="Memory_Lane" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VWu-1h-KHf" id="q52-fh-hUb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VWu-1h-KHf" id="q52-fh-hUb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="84.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="epf-U2-Aff">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjt-gT-sMe">
+                                            <rect key="frame" x="15" y="10.5" width="344" height="65"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXS-sz-axv">
+                                                    <rect key="frame" x="65" y="10" width="269" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="yU2-Uw-J5f">
+                                                    <rect key="frame" x="10" y="10" width="45" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="yU2-Uw-J5f" secondAttribute="height" multiplier="1:1" id="opM-UY-WJE"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kr-tg-8TS">
+                                                    <rect key="frame" x="65" y="37.5" width="103" height="14"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nAF-Tu-6gM" customClass="RatingStack" customModule="Memory_Lane" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="103" height="14"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDR-zL-P7b" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16.5" height="14"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <gestureRecognizers/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                            <real key="value" value="0.0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvq-TH-tEe" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                                    <rect key="frame" x="21.5" y="0.0" width="17" height="14"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                            <real key="value" value="-0.5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHt-bG-TnN" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                                    <rect key="frame" x="43.5" y="0.0" width="16.5" height="14"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                            <real key="value" value="0.0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y48-5a-j1a" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                                    <rect key="frame" x="65" y="0.0" width="16.5" height="14"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                            <real key="value" value="0.0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpP-vn-G91" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
+                                                                    <rect key="frame" x="86.5" y="0.0" width="16.5" height="14"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                            <real key="value" value="0.0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
+                                                            <gestureRecognizers/>
+                                                            <constraints>
+                                                                <constraint firstItem="LDR-zL-P7b" firstAttribute="leading" secondItem="nAF-Tu-6gM" secondAttribute="leading" id="z9D-oa-2Nh"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outletCollection property="RatingBalls" destination="LDR-zL-P7b" collectionClass="NSMutableArray" id="8N8-xD-I5V"/>
+                                                                <outletCollection property="RatingBalls" destination="bvq-TH-tEe" collectionClass="NSMutableArray" id="I8O-bY-x9b"/>
+                                                                <outletCollection property="RatingBalls" destination="WHt-bG-TnN" collectionClass="NSMutableArray" id="8lB-ka-khV"/>
+                                                                <outletCollection property="RatingBalls" destination="Y48-5a-j1a" collectionClass="NSMutableArray" id="4HU-gi-MRa"/>
+                                                                <outletCollection property="RatingBalls" destination="gpP-vn-G91" collectionClass="NSMutableArray" id="V8l-2s-65v"/>
+                                                            </connections>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="nAF-Tu-6gM" firstAttribute="top" secondItem="2kr-tg-8TS" secondAttribute="top" id="NVs-1u-RPs"/>
+                                                        <constraint firstAttribute="bottom" secondItem="nAF-Tu-6gM" secondAttribute="bottom" id="VHG-HL-Cj8"/>
+                                                        <constraint firstItem="nAF-Tu-6gM" firstAttribute="leading" secondItem="2kr-tg-8TS" secondAttribute="leading" id="qzh-aJ-pf6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="nAF-Tu-6gM" secondAttribute="trailing" id="ycc-1H-87W"/>
+                                                        <constraint firstAttribute="height" constant="14" id="zad-Vf-itO"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="rXS-sz-axv" firstAttribute="leading" secondItem="yU2-Uw-J5f" secondAttribute="trailing" constant="10" id="Kn8-Hx-LtQ"/>
+                                                <constraint firstItem="yU2-Uw-J5f" firstAttribute="leading" secondItem="Wjt-gT-sMe" secondAttribute="leading" constant="10" id="UVa-qN-D01"/>
+                                                <constraint firstItem="2kr-tg-8TS" firstAttribute="width" secondItem="Wjt-gT-sMe" secondAttribute="width" multiplier="0.3" id="e6d-kp-OVP"/>
+                                                <constraint firstItem="2kr-tg-8TS" firstAttribute="leading" secondItem="yU2-Uw-J5f" secondAttribute="trailing" constant="10" id="kQ3-58-LOi"/>
+                                                <constraint firstAttribute="bottom" secondItem="yU2-Uw-J5f" secondAttribute="bottom" constant="10" id="q9u-aI-kXj"/>
+                                                <constraint firstItem="yU2-Uw-J5f" firstAttribute="top" secondItem="Wjt-gT-sMe" secondAttribute="top" constant="10" id="qRO-46-24g"/>
+                                                <constraint firstAttribute="height" constant="65" id="qbc-3C-Rmj"/>
+                                                <constraint firstItem="rXS-sz-axv" firstAttribute="centerY" secondItem="Wjt-gT-sMe" secondAttribute="centerY" constant="-12" id="rqb-FE-Etk"/>
+                                                <constraint firstItem="2kr-tg-8TS" firstAttribute="centerY" secondItem="Wjt-gT-sMe" secondAttribute="centerY" constant="12" id="xCe-mJ-hdt"/>
+                                                <constraint firstAttribute="trailing" secondItem="rXS-sz-axv" secondAttribute="trailing" constant="10" id="zfI-EF-0Vo"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Wjt-gT-sMe" firstAttribute="top" secondItem="q52-fh-hUb" secondAttribute="top" constant="10" id="0Ge-D1-aHJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wjt-gT-sMe" secondAttribute="trailing" constant="15" id="1cg-CD-qSG"/>
+                                        <constraint firstAttribute="bottom" secondItem="Wjt-gT-sMe" secondAttribute="bottom" constant="10" id="WpW-Ma-TL3"/>
+                                        <constraint firstItem="Wjt-gT-sMe" firstAttribute="leading" secondItem="q52-fh-hUb" secondAttribute="leading" constant="15" id="tLN-44-Unj"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="connectionImage" destination="yU2-Uw-J5f" id="DGb-2F-BQb"/>
+                                    <outlet property="connectionName" destination="rXS-sz-axv" id="kjG-ZG-ydq"/>
+                                    <outlet property="personCell" destination="Wjt-gT-sMe" id="F3f-Ra-765"/>
+                                    <outlet property="ratingStack" destination="nAF-Tu-6gM" id="hm2-Bb-ide"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -595,7 +716,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8N-u6-EJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3377" y="-1443"/>
+            <point key="canvasLocation" x="3376.811594202899" y="-1443.4151785714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FKB-TZ-j0T">
@@ -607,7 +728,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -625,6 +746,7 @@
         <image name="eventIcon" width="25" height="27.5"/>
         <image name="eventIcon2" width="25" height="27.5"/>
         <image name="eventPlaceHolder" width="414" height="164"/>
+        <image name="personPlaceHolder" width="144" height="144"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="r9R-sR-Z4Z"/>

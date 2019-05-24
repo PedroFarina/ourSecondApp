@@ -32,30 +32,19 @@ public class EventosTableViewController : UITableViewController{
     }
     
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let _ = events[indexPath.row].photoPath{
-            return 150
-        }
-        return 65
+        return 150
     }
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let event:EventCard = events[indexPath.row]
-        var cell:UITableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventTableViewCell
+        cell.lblName.text = event.name
+        cell.lblDate.text = df.string(from: event.date! as Date)
         if let path = event.photoPath{
-            let eventCell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as? EventTableViewCell
-            eventCell?.lblName.text = event.name
-            eventCell?.lblDate.text = df.string(from: event.date! as Date)
             let answer: String? = FileHelper.getFile(filePathWithoutExtension: path)
             if let answer = answer{
-                eventCell?.imgIcon.image = UIImage(contentsOfFile: answer)
-                //eventCell?.imgIcon.image = UIImage(cgImage: eventCell?.imgIcon as! CGImage, scale: 1, orientation: UIImage.Orientation.up)
+                cell.imgIcon.image = UIImage(contentsOfFile: answer)
             }
-            cell = eventCell
-        }
-        else{
-            cell = tableView.dequeueReusableCell(withIdentifier: "noPhotoCell")
-            cell.textLabel?.text = event.name
-            cell.detailTextLabel?.text = df.string(from: event.date! as Date)
         }
         return cell
     }

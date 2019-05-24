@@ -41,7 +41,7 @@ class PersonsTableViewController:UITableViewController{
                 if let index = persons.firstIndex(of: personSelected){
                     let indexPath = IndexPath(row: index, section: 0)
                     tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-                    tableView.cellForRow(at: indexPath)?.backgroundColor = #colorLiteral(red: 0.4666666667, green: 0.8470588235, blue: 0.3294117647, alpha: 1)
+                    tableView.cellForRow(at: indexPath)?.backgroundColor = #colorLiteral(red: 0.6774466634, green: 0.2130276561, blue: 0.431861043, alpha: 1)
                 }
             }
         }
@@ -57,7 +57,14 @@ class PersonsTableViewController:UITableViewController{
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "aCell") as! ConnectionTableViewCell
-        cell.textLabel?.text = persons[indexPath.row].name
+        cell.connectionName.text = persons[indexPath.row].name
+        cell.ratingStack.value = Float(persons[indexPath.row].rating().description) ?? 0
+        if let path = persons[indexPath.row].photoPath{
+            let answer:String? = FileHelper.getFile(filePathWithoutExtension: path)
+            if let answer = answer{
+                cell.connectionImage.image = UIImage(contentsOfFile: answer)
+            }
+        }
         return cell
     }
     
@@ -67,7 +74,7 @@ class PersonsTableViewController:UITableViewController{
     
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedValue[indexPath.row] = persons[indexPath.row]
-        tableView.cellForRow(at: indexPath)?.backgroundColor = #colorLiteral(red: 0.4666666667, green: 0.8470588235, blue: 0.3294117647, alpha: 1)
+        tableView.cellForRow(at: indexPath)?.backgroundColor = #colorLiteral(red: 0.6774466634, green: 0.2130276561, blue: 0.431861043, alpha: 1)
         delegate?.personsSelectedChanged(selected: true, person: persons[indexPath.row])
     }
     

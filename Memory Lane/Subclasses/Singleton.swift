@@ -172,12 +172,9 @@ public class ModelManager{
     }
     
     //Rating Connections
-    public func rateConnection(target:PersonCard,rating ratingValue:Decimal, inEvent event:EventCard?) -> ModelStatus{
+    public func rateConnection(target:PersonCard,rating ratingValue:Decimal) -> ModelStatus{
         let rating = NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating
         rating.value = NSDecimalNumber(decimal:ratingValue)
-        if let event = event{
-            rating.event = event
-        }
         rating.date = NSDate()
         target.addToRatings(rating)
         _ratings.append(rating)
@@ -201,10 +198,9 @@ public class ModelManager{
         else{
             rating = (NSEntityDescription.insertNewObject(forEntityName: "Rating", into: context) as! Rating)
         }
-        target.rating = rating
         rating.value = NSDecimalNumber(decimal: ratingValue)
         rating.date = NSDate()
-        
+        target.rating = rating
         _ratings.append(rating)
         do{
             try context.save()

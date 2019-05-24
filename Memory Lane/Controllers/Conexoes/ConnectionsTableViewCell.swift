@@ -15,6 +15,8 @@ class ConnectionTableViewCell: UITableViewCell {
     @IBOutlet weak var personCell: UIView!
     @IBOutlet weak var connectionName: UILabel!
     @IBOutlet weak var connectionImage: UIImageView!
+    @IBOutlet var ratingStack: RatingStack!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         if let _ = connectionImage {
@@ -26,9 +28,6 @@ class ConnectionTableViewCell: UITableViewCell {
             personCell.layer.shadowRadius = 2
             personCell.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1087698063)
             personCell.layer.shadowOffset = CGSize(width: 3, height: 3)
-
-            
-            
         }
 //        containerView.layer.cornerRadius = containerView.frame.height/2
 //        containerView.layer.borderWidth = 1

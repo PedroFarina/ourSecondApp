@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class EventosViewerController:UIViewController{
+class EventosViewerController:UIViewController, RatingSetDelegate{
     var eventoAtual:EventCard!
     var tbViewController:PersonsTableViewController!
     let df:DateFormatter = DateFormatter()
@@ -17,6 +17,15 @@ class EventosViewerController:UIViewController{
     @IBOutlet var imgEvento: UIImageView!
     @IBOutlet var lblDate: UILabel!
     @IBOutlet var lblNome: UILabel!
+    @IBOutlet var ratingStack : RatingStack!
+    
+    override func viewDidLoad() {
+        ratingStack.setDelegate(delegate: self)
+    }
+    
+    func RatingDidSet() {
+        let _ = ModelManager.shared().rateEvent(target: eventoAtual, rating: Decimal(Int(ratingStack.value)))
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? PersonsTableViewController{
@@ -45,6 +54,9 @@ class EventosViewerController:UIViewController{
             if let answer = answer{
                 imgEvento.image = UIImage(contentsOfFile: answer)
             }
+        }
+        if let ratingValue = eventoAtual.rating{
+            ratingStack.value = Float(Int(ratingValue.value!))
         }
     }
 }

@@ -41,7 +41,7 @@ class ConexoesViewerController : UIViewController{
         for i in connectionAtual?.ratings?.array as! [Rating]{
             notas.append(i.value?.intValue ?? 0)
         }
-        lineGraphView.update(points: notas)
+        //lineGraphView.update(points: notas)
         
         if let connectionAtual = connectionAtual{
             lblNome.text = connectionAtual.name
@@ -71,7 +71,7 @@ class ConexoesViewerController : UIViewController{
 //
 //            }
             
-            lineGraphView.LineColor = UIColor(cgColor: contactImage.layer.borderColor ?? UIColor.red as! CGColor)
+            //lineGraphView.LineColor = UIColor(cgColor: contactImage.layer.borderColor ?? UIColor.red as! CGColor)
             
             //contactImage =
             //            imgPicker.pickImage(self) { (image) in
