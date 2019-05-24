@@ -35,7 +35,7 @@ class DoughnutChartView: UIView {
         }
         //Random Color generation if not enough colors for graph
         while chartColors.count != chartValues.count{
-            if chartColors.count != chartValues.count{
+            if chartColors.count < chartValues.count{
                 chartColors.append(UIColor(red: CGFloat.random(in: 0...1),
                                            green: CGFloat.random(in: 0...1),
                                            blue: CGFloat.random(in: 0...1),

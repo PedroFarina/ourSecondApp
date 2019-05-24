@@ -11,7 +11,13 @@ import UIKit
 
 class ConexoesViewerController : UIViewController{
     var connectionAtual:PersonCard?
+    {
+        didSet{
+            ratingTableViewController?.connection = connectionAtual
+        }
+    }
     
+    private var ratingTableViewController:RatingTableViewController?
     
     @IBOutlet weak var contactImage: UIImageView!
     
@@ -110,6 +116,10 @@ class ConexoesViewerController : UIViewController{
             else if let controller = navController.topViewController as? RatingController{
                 controller.pessoa = connectionAtual
             }
+        }
+        else  if let controller = segue.destination as? RatingTableViewController{
+            ratingTableViewController = controller
+            controller.connection = connectionAtual
         }
     }
 }
