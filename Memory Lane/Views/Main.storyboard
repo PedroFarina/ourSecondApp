@@ -65,7 +65,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visualisar Histórico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbQ-b1-9Bn">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visualizar Histórico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbQ-b1-9Bn">
                                                                 <rect key="frame" x="0.0" y="0.0" width="131.5" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" red="0.84933680300000003" green="0.32741093640000002" blue="0.46667045350000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -563,8 +563,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="selectedImageTintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.50196078431372548" green="0.22745098039215686" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.50196078431372548" green="0.22745098039215686" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="bQg-vl-KlO" kind="relationship" relationship="viewControllers" id="OZQ-oe-E38"/>
@@ -634,7 +634,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visualisar Histórico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZb-eO-MmM">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visualizar Histórico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZb-eO-MmM">
                                                         <rect key="frame" x="0.0" y="0.0" width="131.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.84933680300000003" green="0.32741093640000002" blue="0.46667045350000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1091,6 +1091,7 @@
                             <constraint firstItem="48S-Zd-HaL" firstAttribute="centerY" secondItem="CyQ-qv-U4l" secondAttribute="centerY" id="XCE-1y-nbl"/>
                             <constraint firstItem="48S-Zd-HaL" firstAttribute="centerX" secondItem="CyQ-qv-U4l" secondAttribute="centerX" id="kfz-aq-8SK"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="xPe-mU-8iB"/>
                     </view>
                     <connections>
                         <outlet property="colorsLabelsStackView" destination="IFw-hb-rSV" id="zsm-mg-Hed"/>
@@ -1149,5 +1150,5 @@
         <image name="mainIcon" width="24.5" height="26.5"/>
         <image name="mainIcon2" width="24.5" height="26.5"/>
     </resources>
-    <color key="tintColor" red="0.84705882349999995" green="0.3294117647" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <color key="tintColor" red="0.50196078431372548" green="0.22745098039215686" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

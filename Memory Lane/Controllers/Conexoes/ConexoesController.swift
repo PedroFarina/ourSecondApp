@@ -56,6 +56,7 @@ public class ConexoesController : UITableViewController, DataModifiedDelegate{
         var cell:ConnectionTableViewCell = tableView.dequeueReusableCell(withIdentifier: "connectionCell") as! ConnectionTableViewCell
         let connectionAtual = connections[indexPath.row]
         cell.connectionName.text = connectionAtual.name
+        cell.ratingStack.value = Float(connectionAtual.rating() as NSDecimalNumber)
         if let path = connectionAtual.photoPath{
             let answer:String? = FileHelper.getFile(filePathWithoutExtension: path)
             if let answer = answer{

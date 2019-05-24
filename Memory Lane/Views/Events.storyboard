@@ -304,7 +304,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-VD-6eY">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallerEventPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-VD-6eY">
                                             <rect key="frame" x="10" y="10" width="129.5" height="129.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="XLi-VD-6eY" secondAttribute="height" multiplier="1:1" id="5zg-Y3-mTY"/>
@@ -578,7 +578,7 @@
                                                                     <gestureRecognizers/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                                                                             <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -593,7 +593,7 @@
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                                                                             <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -608,7 +608,7 @@
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                                                                             <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -623,7 +623,7 @@
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                                                                             <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -638,7 +638,7 @@
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                                            <color key="value" red="0.73727327590000002" green="0.2310069203" blue="0.081604219970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.67843137249999996" green="0.21302765609999999" blue="0.431861043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                                                                             <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -747,9 +747,10 @@
         <image name="eventIcon2" width="25" height="27.5"/>
         <image name="eventPlaceHolder" width="414" height="164"/>
         <image name="personPlaceHolder" width="144" height="144"/>
+        <image name="smallerEventPlaceholder" width="155" height="106"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r9R-sR-Z4Z"/>
+        <segue reference="TgD-zz-5zE"/>
         <segue reference="kze-p9-Z1e"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.50196078431372548" green="0.22745098039215686" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
