@@ -10,10 +10,15 @@ import UIKit
 import Foundation
 
 public class ConexoesController : UITableViewController, DataModifiedDelegate{
+    private var viewerController:ConexoesViewerController?
     private var connections:[PersonCard] = []
+    private var indice:Int!
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? ConexoesViewerController{
-            controller.connectionAtual = connections[tableView.indexPathForSelectedRow!.row]
+            viewerController = controller
+            indice = tableView.indexPathForSelectedRow!.row
+            
+            controller.connectionAtual = connections[indice]
         }
     }
     
@@ -36,6 +41,7 @@ public class ConexoesController : UITableViewController, DataModifiedDelegate{
     public func DataModified() {
         getData()
         tableView.reloadData()
+        viewerController?.connectionAtual = connections[indice]
     }
     
     public override func numberOfSections(in tableView: UITableView) -> Int {

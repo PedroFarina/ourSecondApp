@@ -51,6 +51,8 @@
 		02F92450228F13330037CFB3 /* RatingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F9244E228F13330037CFB3 /* RatingHeaderView.swift */; };
 		02F92452228F13A40037CFB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F92451228F13A40037CFB3 /* Main.storyboard */; };
 		02F92456228F14B90037CFB3 /* RatingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F92455228F14B90037CFB3 /* RatingCollectionViewCell.swift */; };
+		D95B4446229854C300EE7AF9 /* RatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B4445229854C300EE7AF9 /* RatingTableViewController.swift */; };
+		D95B444822986F5F00EE7AF9 /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B444722986F5F00EE7AF9 /* RatingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		02F9244E228F13330037CFB3 /* RatingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingHeaderView.swift; sourceTree = "<group>"; };
 		02F92451228F13A40037CFB3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		02F92455228F14B90037CFB3 /* RatingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingCollectionViewCell.swift; sourceTree = "<group>"; };
+		D95B4445229854C300EE7AF9 /* RatingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
+		D95B444722986F5F00EE7AF9 /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,8 @@
 				02F9244D228F13330037CFB3 /* RatingCollectionViewController.swift */,
 				02F9244E228F13330037CFB3 /* RatingHeaderView.swift */,
 				02B8523F228C777300EC7403 /* RatingController.swift */,
+				D95B4445229854C300EE7AF9 /* RatingTableViewController.swift */,
+				D95B444722986F5F00EE7AF9 /* RatingTableViewCell.swift */,
 			);
 			path = Rating;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 				0243D7E6228BACFF0022D65E /* EventosCreatorController.swift in Sources */,
 				029DA3862283691D00150B55 /* Rating+CoreDataClass.swift in Sources */,
 				028AB238228E078A007A52FA /* ConnectionsTableViewCell.swift in Sources */,
+				D95B444822986F5F00EE7AF9 /* RatingTableViewCell.swift in Sources */,
 				024348812295D790000BB7D8 /* RatingStack.swift in Sources */,
 				029DA3642283634600150B55 /* AppDelegate.swift in Sources */,
 				02B677782285EDA500512255 /* ArrayNotifier.swift in Sources */,
@@ -380,6 +387,7 @@
 				028AB233228E06E4007A52FA /* ConexoesController.swift in Sources */,
 				02B85240228C777300EC7403 /* RatingController.swift in Sources */,
 				0243487F2295C6D2000BB7D8 /* RatingBall.swift in Sources */,
+				D95B4446229854C300EE7AF9 /* RatingTableViewController.swift in Sources */,
 				02B6777F22861BDE00512255 /* DataModifiedDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
