@@ -40,6 +40,7 @@ public class EventosTableViewController : UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventTableViewCell
         cell.lblName.text = event.name
         cell.lblDate.text = df.string(from: event.date! as Date)
+        cell.ratingStack.value = Float(event.rating?.value! ?? 0)
         if let path = event.photoPath{
             let answer: String? = FileHelper.getFile(filePathWithoutExtension: path)
             if let answer = answer{
