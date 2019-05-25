@@ -1024,7 +1024,6 @@
         <!--Historico Persons Table View Controller-->
         <scene sceneID="ZPy-C2-4ld">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sBa-z6-Uks" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="blu-bE-lnm" customClass="HistoricoPersonsTableViewController" customModule="Memory_Lane" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FjB-ZL-HCD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1059,6 +1058,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBa-z6-Uks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1469.5652173913045" y="-62.276785714285708"/>
         </scene>

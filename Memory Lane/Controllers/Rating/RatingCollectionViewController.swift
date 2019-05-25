@@ -70,6 +70,7 @@ class RatingCollectionViewController: UICollectionViewController, UICollectionVi
         default:
             assert(false, "invalid element type")
         }
+        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "RatingHeaderView", for: indexPath)
     }
     
     

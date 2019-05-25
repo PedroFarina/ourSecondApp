@@ -40,7 +40,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmC-l0-Whn">
                                                     <rect key="frame" x="80" y="45" width="118" height="14"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VNY-ji-aLn" customClass="RatingStack" customModule="Memory_Lane" customModuleProvider="target">
+                                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VNY-ji-aLn" customClass="RatingStack" customModule="Memory_Lane" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="118" height="14"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNx-Aq-ZOd" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
@@ -586,7 +586,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7E-qj-kFT">
                                                     <rect key="frame" x="114" y="25" width="98" height="14"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Vg-ld-eCt" customClass="RatingStack" customModule="Memory_Lane" customModuleProvider="target">
+                                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Vg-ld-eCt" customClass="RatingStack" customModule="Memory_Lane" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="98" height="14"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="368-o5-cKq" customClass="RatingBall" customModule="Memory_Lane" customModuleProvider="target">
@@ -733,7 +733,7 @@
         <image name="personPlaceHolder" width="144" height="144"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rqY-2g-O4W"/>
+        <segue reference="zVG-tp-HaU"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.50196078431372548" green="0.22745098039215686" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
